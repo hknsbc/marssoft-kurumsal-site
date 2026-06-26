@@ -53,10 +53,10 @@ export default function Footer() {
     <footer id="marssoft-global-footer" style={{ background: "#060610", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
       <div className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
 
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="col-span-2 md:col-span-2">
             <Link href="/" className="inline-flex items-center mb-4 select-none">
               <span
                 className="text-[28px] font-black tracking-[-0.5px] leading-none"

@@ -133,7 +133,7 @@ export default function Solutions() {
         style={{ background: "linear-gradient(135deg, #0a0a1a 0%, #1a1040 50%, #0d1a30 100%)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-[12px] text-[#D4A017] uppercase tracking-[2px] mb-3">Ürünlerimiz</div>
-          <h1 className="text-[36px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
+          <h1 className="text-[36px] md:text-[28px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
             Sektörünüze Özel <span className="text-[#D4A017]">SaaS Çözümleri</span>
           </h1>
           <p className="text-[16px] text-white/60 max-w-xl leading-[1.7]">
@@ -221,6 +221,7 @@ export default function Solutions() {
     </div>
   );
 }
+
 
 
 

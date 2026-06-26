@@ -356,12 +356,12 @@ export default function Home() {
       {/* ════════════════════════════
           PRODUCTS
       ════════════════════════════ */}
-      <section className="px-6 lg:px-8 py-24" style={{ background: "#09090f" }}>
+      <section className="px-6 lg:px-8 py-16 md:py-24" style={{ background: "#09090f" }}>
         <div className="max-w-6xl mx-auto">
           <div className="mb-14">
             <div className="text-[11px] font-bold tracking-[3px] uppercase mb-4" style={{ color: "#D4A017" }}>Ürünlerimiz</div>
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-              <h2 className="text-[36px] lg:text-[42px] font-bold tracking-tight text-white leading-[1.15]">
+              <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold tracking-tight text-white leading-[1.15]">
                 Sektörünüze Özel<br />Dijital Çözümler
               </h2>
               <p className="text-[15px] max-w-sm lg:text-right" style={{ color: "rgba(255,255,255,0.45)" }}>
@@ -371,7 +371,7 @@ export default function Home() {
           </div>
 
           {/* Main product cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
             {products.map((p) => (
               <Link key={p.name} href={p.href}
                 className="group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 block"
@@ -421,12 +421,12 @@ export default function Home() {
       {/* ════════════════════════════
           HOW IT WORKS
       ════════════════════════════ */}
-      <section className="px-6 lg:px-8 py-24"
+      <section className="px-6 lg:px-8 py-16 md:py-24"
         style={{ background: "rgba(255,255,255,0.015)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="mb-14">
             <div className="text-[11px] font-bold tracking-[3px] uppercase mb-4" style={{ color: "#D4A017" }}>Süreç</div>
-            <h2 className="text-[36px] lg:text-[42px] font-bold tracking-tight text-white">Nasıl Başlanır?</h2>
+            <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold tracking-tight text-white">Nasıl Başlanır?</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -460,7 +460,7 @@ export default function Home() {
           HIGHLIGHT SECTIONS (alternating)
       ════════════════════════════ */}
       {highlights.map((h, i) => (
-        <section key={i} className="px-6 lg:px-8 py-20 lg:py-24"
+        <section key={i} className="px-6 lg:px-8 py-14 md:py-20 lg:py-24"
           style={{ background: i % 2 === 0 ? "#09090f" : "rgba(255,255,255,0.015)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
           <div className="max-w-6xl mx-auto">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center ${h.flip ? "lg:flex lg:flex-row-reverse" : ""}`}>
@@ -554,7 +554,7 @@ export default function Home() {
       {/* ════════════════════════════
           STATS COUNTERS
       ════════════════════════════ */}
-      <section className="px-6 lg:px-8 py-20" style={{ background: "#09090f", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+      <section className="px-6 lg:px-8 py-14 md:py-20" style={{ background: "#09090f", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <div className="text-[11px] font-bold tracking-[3px] uppercase mb-4" style={{ color: "#D4A017" }}>Rakamlarla Biz</div>
@@ -562,9 +562,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((s, i) => (
-              <div key={i} className="text-center rounded-2xl p-8 transition-all hover:-translate-y-0.5"
+              <div key={i} className="text-center rounded-2xl p-5 md:p-8 transition-all hover:-translate-y-0.5"
                 style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div className="text-[44px] font-black leading-none mb-2"
+                <div className="text-[32px] md:text-[44px] font-black leading-none mb-2"
                   style={{ background: "linear-gradient(135deg,#D4A017,#F0CC6A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                   {s.value}
                 </div>
@@ -579,13 +579,13 @@ export default function Home() {
       {/* ════════════════════════════
           TESTIMONIALS
       ════════════════════════════ */}
-      <section className="px-6 lg:px-8 py-24"
+      <section className="px-6 lg:px-8 py-16 md:py-24"
         style={{ background: "rgba(255,255,255,0.015)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="mb-14">
             <div className="text-[11px] font-bold tracking-[3px] uppercase mb-4" style={{ color: "#D4A017" }}>Müşteri Yorumları</div>
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-              <h2 className="text-[36px] lg:text-[42px] font-bold tracking-tight text-white">
+              <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold tracking-tight text-white">
                 Müşterilerimiz<br />Bizi Nasıl Değerlendiriyor?
               </h2>
               <div className="flex items-center gap-3">
@@ -623,7 +623,7 @@ export default function Home() {
       {/* ════════════════════════════
           FAQ
       ════════════════════════════ */}
-      <section className="px-6 lg:px-8 py-24" style={{ background: "#09090f", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+      <section className="px-6 lg:px-8 py-16 md:py-24" style={{ background: "#09090f", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-14">
             <div>
@@ -690,6 +690,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 

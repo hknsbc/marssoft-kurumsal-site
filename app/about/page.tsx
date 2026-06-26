@@ -36,7 +36,7 @@ export default function About() {
         style={{ background: "linear-gradient(135deg, #0a0a1a 0%, #1a1040 50%, #0d1a30 100%)" }}>
         <div className="max-w-6xl mx-auto max-w-[600px]">
           <div className="text-[12px] text-[#D4A017] uppercase tracking-[2px] mb-3">Hakkımızda</div>
-          <h1 className="text-[36px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
+          <h1 className="text-[36px] md:text-[28px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
             KOBİ&apos;lerin Dijital Dönüşüm <span className="text-[#D4A017]">Ortağı</span>
           </h1>
           <p className="text-[16px] text-white/60 leading-[1.7]">
@@ -114,5 +114,6 @@ export default function About() {
     </div>
   );
 }
+
 
 

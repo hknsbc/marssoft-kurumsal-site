@@ -52,7 +52,7 @@ export default function Contact() {
         style={{ background: "linear-gradient(135deg, #0a0a1a 0%, #1a1040 50%, #0d1a30 100%)" }}>
         <div className="max-w-6xl mx-auto max-w-[500px]">
           <div className="text-[12px] text-[#D4A017] uppercase tracking-[2px] mb-3">İletişim</div>
-          <h1 className="text-[36px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
+          <h1 className="text-[36px] md:text-[28px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
             Size Nasıl <span className="text-[#D4A017]">Yardımcı Olabiliriz?</span>
           </h1>
           <p className="text-[16px] text-white/60 leading-[1.7]">
@@ -64,7 +64,7 @@ export default function Contact() {
       {/* Contact info cards */}
       <section className="px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-14">
             {contactInfo.map((c) => (
               <div key={c.label} className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(43,94,200,0.3)] rounded-xl p-5 transition-colors">
                 <div className="text-[22px] mb-3">{c.icon}</div>
@@ -156,6 +156,7 @@ export default function Contact() {
     </div>
   );
 }
+
 
 
 

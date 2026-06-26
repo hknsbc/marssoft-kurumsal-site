@@ -40,12 +40,12 @@ export default function Navigation() {
       style={{ background: "rgba(9,9,15,0.92)", backdropFilter: "blur(20px)" }}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-[68px]">
+        <div className="flex justify-between items-center h-14 md:h-[68px]">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 select-none">
             <span
-              className="text-[26px] font-black tracking-[-0.5px] leading-none"
+              className="text-[22px] md:text-[26px] font-black tracking-[-0.5px] leading-none"
               style={{
                 background: "linear-gradient(135deg, #B8860B 0%, #D4A017 30%, #F0CC6A 55%, #D4A017 75%, #B8860B 100%)",
                 WebkitBackgroundClip: "text",

@@ -72,7 +72,7 @@ export default function Pricing() {
         style={{ background: "linear-gradient(135deg, #0a0a1a 0%, #1a1040 50%, #0d1a30 100%)" }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-[12px] text-[#D4A017] uppercase tracking-[2px] mb-3">Fiyatlandırma</div>
-          <h1 className="text-[36px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
+          <h1 className="text-[36px] md:text-[28px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
             İhtiyacınıza Özel <span className="text-[#D4A017]">Fiyatlandırma</span>
           </h1>
           <p className="text-[16px] text-white/60 leading-[1.7]">
@@ -83,7 +83,7 @@ export default function Pricing() {
 
       {/* Plans */}
       <section className="px-6 lg:px-8 py-16">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -158,6 +158,7 @@ export default function Pricing() {
     </div>
   );
 }
+
 
 
 
