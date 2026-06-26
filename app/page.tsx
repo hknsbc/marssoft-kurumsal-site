@@ -536,7 +536,7 @@ export default function Home() {
               }}>
               Ücretsiz Teklif Al <ArrowRight />
             </Link>
-            <a href="https://wa.me/905532263766"
+            <a href="https://wa.me/905447221935"
               className="inline-flex items-center gap-2.5 font-semibold px-7 py-4 rounded-xl text-[15px]"
               style={{ color: "#4ade80", border: "1px solid rgba(37,211,102,0.3)", background: "rgba(37,211,102,0.07)" }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

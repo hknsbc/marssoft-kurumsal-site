@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const WA_NUMBER = "905532263766";
+const WA_NUMBER = "905447221935";
 
 const botMessages = [
   { id: "greeting", from: "bot", text: "Merhaba! 👋 Ben Marssoft Asistan'ım. Size nasıl yardımcı olabilirim?" },
