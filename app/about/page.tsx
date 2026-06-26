@@ -17,6 +17,17 @@ const metrics = [
 ];
 
 
+export const metadata = {
+  title: "Hakkımızda",
+  description: "Marssoft, KOBİ'lerin dijital dönüşümünü hızlandırmak için bulut tabanlı SaaS yazılımlar geliştiren global bir yazılım şirketidir. Misyonumuz, her ölçekteki işletmeye erişilebilir teknoloji sunmaktır.",
+  alternates: { canonical: "https://marssoft.com.tr/about" },
+  openGraph: {
+    title: "Hakkımızda | Marssoft",
+    description: "Marssoft ekibi ve misyonumuz hakkında bilgi edinin.",
+    url: "https://marssoft.com.tr/about",
+  },
+};
+
 export default function About() {
   return (
     <div className="bg-[#0a0a1a] text-white">

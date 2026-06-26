@@ -14,6 +14,17 @@ const faqs = [
   { q: "Hangi ürün bana uygun?", a: "Güzellik & kuaför için SalonPro.io, VET PANEL & Pet Panel için Vet Panel, stok takibi için Stok Panel uygulamamız idealdir." },
 ];
 
+export const metadata = {
+  title: "İletişim",
+  description: "Marssoft ile iletişime geçin. Demo talep edin, fiyat alın veya sorularınızı iletin. 7/24 destek ekibimiz yanınızda.",
+  alternates: { canonical: "https://marssoft.com.tr/contact" },
+  openGraph: {
+    title: "İletişim | Marssoft",
+    description: "Demo talep edin veya fiyat teklifi alın. Marssoft destek ekibi 7/24 yanınızda.",
+    url: "https://marssoft.com.tr/contact",
+  },
+};
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);

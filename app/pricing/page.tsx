@@ -53,6 +53,17 @@ const faqs = [
   { q: "Verilerimi taşıyabilir miyim?", a: "Evet. Mevcut verilerinizi Excel veya CSV formatında sisteme aktarmanıza yardımcı oluyoruz." },
 ];
 
+export const metadata = {
+  title: "Fiyatlandırma",
+  description: "Marssoft SaaS yazılımları için esnek fiyatlandırma planları. SalonPro.io, Vet Panel, Pet Panel, Marine Panel ve Stok Panel için özel fiyat teklifi alın. 14 gün ücretsiz deneyin.",
+  alternates: { canonical: "https://marssoft.com.tr/pricing" },
+  openGraph: {
+    title: "Fiyatlandırma | Marssoft",
+    description: "İşletmenize özel fiyat teklifi için bizimle iletişime geçin. 14 gün ücretsiz deneme.",
+    url: "https://marssoft.com.tr/pricing",
+  },
+};
+
 export default function Pricing() {
   return (
     <div className="bg-[#0a0a1a] text-white">

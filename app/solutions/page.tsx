@@ -113,6 +113,18 @@ const whyUs = [
   { icon: "💳", title: "Esnek Fiyat", desc: "İşletme büyüklüğünüze göre ölçeklenen aylık planlar." },
 ];
 
+export const metadata = {
+  title: "Ürünlerimiz",
+  description: "SalonPro.io (kuaför & güzellik salonu), Vet Panel (veteriner kliniği), Pet Panel (petshop), Marine Panel (marina) ve Stok Panel (stok yönetimi) — tüm KOBİ yazılım çözümlerimizi keşfedin.",
+  keywords: ["SalonPro", "Vet Panel", "Pet Panel", "Marine Panel", "Stok Panel", "güzellik salonu yazılımı", "veteriner yazılımı", "petshop yazılımı", "marina yazılımı", "stok takip"],
+  alternates: { canonical: "https://marssoft.com.tr/solutions" },
+  openGraph: {
+    title: "Ürünlerimiz | Marssoft",
+    description: "SalonPro.io, Vet Panel, Pet Panel, Marine Panel ve Stok Panel — işletmenize özel SaaS çözümler.",
+    url: "https://marssoft.com.tr/solutions",
+  },
+};
+
 export default function Solutions() {
   return (
     <div className="bg-[#0a0a1a] text-white">

@@ -41,6 +41,17 @@ const posts = [
 
 const categories = ["Tümü", "Güzellik", "Veteriner", "Stok Yönetimi", "SalonPro", "İpuçları"];
 
+export const metadata = {
+  title: "Blog",
+  description: "Marssoft Blog — KOBİ dijital dönüşümü, SaaS yazılım ipuçları, sektör haberleri ve işletme yönetimi hakkında güncel içerikler.",
+  alternates: { canonical: "https://marssoft.com.tr/blog" },
+  openGraph: {
+    title: "Blog | Marssoft",
+    description: "KOBİ dijital dönüşümü ve SaaS yazılım hakkında güncel içerikler.",
+    url: "https://marssoft.com.tr/blog",
+  },
+};
+
 export default function Blog() {
   return (
     <div className="bg-[#0a0a1a] text-white">

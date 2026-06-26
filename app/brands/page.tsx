@@ -70,6 +70,17 @@ const stats = [
   { value: "7/24", label: "Destek" },
 ];
 
+export const metadata = {
+  title: "Referanslar",
+  description: "Dünyanın dört bir yanından 500'den fazla işletme Marssoft yazılımlarına güveniyor. Müşteri başarı hikayelerini ve referanslarımızı inceleyin.",
+  alternates: { canonical: "https://marssoft.com.tr/brands" },
+  openGraph: {
+    title: "Referanslar | Marssoft",
+    description: "500+ global işletme Marssoft ile dijital dönüşümünü tamamladı.",
+    url: "https://marssoft.com.tr/brands",
+  },
+};
+
 export default function Brands() {
   return (
     <div className="bg-[#0a0a1a] text-white">
