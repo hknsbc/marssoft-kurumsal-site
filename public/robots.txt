@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marssoft.com.tr/sitemap.xml
+Host: https://marssoft.com.tr
