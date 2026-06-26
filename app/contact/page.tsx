@@ -34,13 +34,27 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const [error, setError] = useState("");
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    setLoading(false);
-    setSent(true);
-    setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Gönderilemedi.");
+      setSent(true);
+      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Bir hata oluştu, tekrar deneyin.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass = "w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] text-white text-[14px] px-4 py-2.5 rounded-lg outline-none focus:border-[rgba(43,94,200,0.25)] placeholder:text-white/30 transition-colors";
@@ -126,13 +140,18 @@ export default function Contact() {
                     <label className="block text-[13px] text-white/50 mb-1.5">Mesaj <span className="text-[#D4A017]">*</span></label>
                     <textarea name="message" value={form.message} onChange={handleChange} required rows={5} placeholder="Mesajınızı yazın..." className={inputClass + " resize-none"} />
                   </div>
+                  {error && (
+                    <div className="text-[13px] text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-4 py-2.5">
+                      ⚠️ {error}
+                    </div>
+                  )}
                   <button type="submit" disabled={loading} className="w-full bg-[#B8860B] hover:bg-[#9A7209] disabled:opacity-60 text-white py-3 rounded-lg text-[14px] font-medium transition-colors flex items-center justify-center gap-2">
                     {loading ? (
                       <>
                         <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                         Gönderiliyor...
                       </>
-                    ) : "Mesajı Gönder"}
+                    ) : "Mesajı Gönder →"}
                   </button>
                 </form>
               )}
