@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { error } = await resend.emails.send({
-      from: "Marssoft Web <noreply@marssoft.com.tr>",
+      from: "Marssoft Web <onboarding@resend.dev>",
       to: ["pazarlama@marssoft.com.tr"],
       replyTo: email,
       subject: `[Marssoft Web] ${subject || "Yeni Mesaj"} — ${name}`,
