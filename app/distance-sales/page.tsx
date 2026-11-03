@@ -22,7 +22,7 @@ export default function DistanceSales() {
       <p>Hizmetin adı, planı, süresi (aylık/yıllık), KDV dahil toplam bedeli ve ödeme şekli sipariş özetinde belirtilir. Hizmet fiziksel olmayan, elektronik ortamda ifa edilen dijital bir hizmettir.</p>
 
       <h2>Madde 4 – Ödeme</h2>
-      <p>Ödeme, kredi/banka kartı ile BDDK lisanslı ödeme kuruluşu iyzico altyapısı üzerinden, 3D Secure doğrulamasıyla alınır. Kart bilgileri SATICI tarafından görülmez ve saklanmaz. Abonelik yenilemelerinde bedel, ALICI&apos;nın onayı çerçevesinde aynı yöntemle tahsil edilir.</p>
+      <p>Ödeme, kredi/banka kartı ile BDDK lisanslı ödeme kuruluşu iyzico altyapısı üzerinden, 3D Secure doğrulamasıyla ve SSL sertifikalı (256-bit şifrelemeli) güvenli bağlantı üzerinden alınır. Kart bilgileri SATICI tarafından görülmez ve saklanmaz. Abonelik yenilemelerinde bedel, ALICI&apos;nın onayı çerçevesinde aynı yöntemle tahsil edilir.</p>
 
       <h2>Madde 5 – İfa ve Teslimat</h2>
       <p>Hizmet erişimi, ödemenin onaylanmasının ardından elektronik ortamda en geç 24 saat içinde ALICI&apos;ya tanımlanır. Teslimat ücreti yoktur. Ayrıntılar için <Link href="/delivery-returns">Teslimat ve İade Şartları</Link> sayfasına bakınız.</p>
