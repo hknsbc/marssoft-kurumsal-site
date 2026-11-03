@@ -36,16 +36,12 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav id="marssoft-global-nav" className="sticky top-0 z-50 border-b border-white/[0.07]"
-      style={{ background: "rgba(9,9,15,0.92)", backdropFilter: "blur(20px)" }}
-    >
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 md:h-[68px]">
-
-          {/* Logo */}
+    <nav id="marssoft-global-nav" className="sticky top-0 z-50 border-b border-white/[0.07] bg-[#06070b]/90 backdrop-blur-2xl">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between md:h-[72px]">
           <Link href="/" className="flex items-center gap-2 select-none">
             <span
-              className="text-[22px] md:text-[26px] font-black tracking-[-0.5px] leading-none"
+              className="text-[22px] font-black leading-none tracking-[-0.5px] md:text-[26px]"
               style={{
                 background: "linear-gradient(135deg, #B8860B 0%, #D4A017 30%, #F0CC6A 55%, #D4A017 75%, #B8860B 100%)",
                 WebkitBackgroundClip: "text",
@@ -58,16 +54,15 @@ export default function Navigation() {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3.5 py-2 rounded-lg text-[13.5px] transition-colors ${
+                className={`rounded-lg px-3.5 py-2 text-[13.5px] transition-colors ${
                   pathname === link.href
-                    ? "text-[#F0CC6A] bg-white/[0.06]"
-                    : "text-white/55 hover:text-white hover:bg-white/[0.05]"
+                    ? "bg-white/[0.08] text-[#F0CC6A]"
+                    : "text-white/60 hover:bg-white/[0.05] hover:text-white"
                 }`}
               >
                 {link.label}
@@ -75,19 +70,18 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden items-center gap-3 md:flex">
             <Link
               href="/contact"
-              className="text-white text-[13.5px] font-medium px-4 py-2 rounded-lg transition-all"
+              className="rounded-full px-4 py-2 text-[13.5px] font-semibold text-white transition-all"
               style={{ background: "linear-gradient(135deg, #B8860B 0%, #D4A017 100%)", boxShadow: "0 0 0 1px rgba(212,160,23,0.35)" }}
             >
-              Hemen Başlayın →
+              Hemen başlayın →
             </Link>
           </div>
 
-          {/* Mobile toggle */}
           <button
-            className="md:hidden text-white/60 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/[0.06]"
+            className="rounded-lg p-1.5 text-white/70 transition-colors hover:bg-white/[0.06] hover:text-white md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menü"
           >
@@ -96,32 +90,31 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-white/[0.07] bg-[#09090f]">
-          <div className="px-6 py-4 space-y-0.5">
+        <div className="border-t border-white/[0.07] bg-[#09090f] md:hidden">
+          <div className="space-y-0.5 px-6 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-[14px] transition-colors ${
+                className={`flex items-center gap-2 rounded-lg px-3 py-2.5 text-[14px] transition-colors ${
                   pathname === link.href
-                    ? "text-white bg-white/[0.07]"
-                    : "text-white/55 hover:text-white hover:bg-white/[0.05]"
+                    ? "bg-white/[0.08] text-white"
+                    : "text-white/60 hover:bg-white/[0.05] hover:text-white"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-3 pb-1">
+            <div className="pb-1 pt-3">
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center text-white font-medium px-5 py-3 rounded-xl text-[14px] transition-all"
+                className="flex items-center justify-center rounded-xl px-5 py-3 text-[14px] font-semibold text-white transition-all"
                 style={{ background: "linear-gradient(135deg, #B8860B 0%, #D4A017 100%)" }}
               >
-                Hemen Başlayın
+                Hemen başlayın
               </Link>
             </div>
           </div>

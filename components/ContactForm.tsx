@@ -6,7 +6,7 @@ const faqs = [
   { q: "Ürünlerinizi nasıl deneyebilirim?", a: "Her ürün için 14 günlük ücretsiz deneme sunuyoruz. Kredi kartı gerekmez, hemen başlayabilirsiniz." },
   { q: "Kurulum ne kadar sürer?", a: "Sisteme giriş yaptıktan sonra birkaç dakikada kullanmaya başlayabilirsiniz. Mevcut verilerinizi aktarmanıza da yardımcı oluyoruz." },
   { q: "Teknik destek nasıl çalışıyor?", a: "WhatsApp ve email üzerinden 7/24 teknik destek sağlıyoruz." },
-  { q: "Hangi ürün bana uygun?", a: "Güzellik & kuaför için SalonPro.io, veteriner için Vet Panel, petshop için Pet Panel, marina için Marine Panel, stok takibi için Stok Panel idealdir." },
+  { q: "Hangi ürün bana uygun?", a: "Güzellik & kuaför için SalonPro.io, doktor ve klinikler için DoktorPlan, veteriner için Vet Panel, petshop için Pet Panel, marina için Marine Panel, stok takibi için Stok Panel idealdir." },
 ];
 
 const inputClass = "w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] text-white text-[14px] px-4 py-2.5 rounded-lg outline-none focus:border-[rgba(212,160,23,0.4)] placeholder:text-white/30 transition-colors";
@@ -78,6 +78,7 @@ export default function ContactForm() {
                 <select name="subject" value={form.subject} onChange={handleChange} className={inputClass}>
                   <option value="" className="bg-[#0a0a1a]">Seçin...</option>
                   <option className="bg-[#0a0a1a]">SalonPro.io Demo</option>
+                  <option className="bg-[#0a0a1a]">DoktorPlan Demo</option>
                   <option className="bg-[#0a0a1a]">Vet Panel Demo</option>
                   <option className="bg-[#0a0a1a]">Pet Panel Demo</option>
                   <option className="bg-[#0a0a1a]">Marine Panel Demo</option>

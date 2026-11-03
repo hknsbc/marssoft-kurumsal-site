@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.6,
     },
+    ...["privacy", "distance-sales", "delivery-returns"].map((p) => ({
+      url: `${baseUrl}/${p}`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    })),
     {
       url: `${baseUrl}/salonpro`,
       lastModified: now,

@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     template: "%s | Marssoft",
   },
   description:
-    "Marssoft, küçük ve orta ölçekli işletmeler için geliştirilmiş bulut tabanlı SaaS yazılım çözümleri sunar. SalonPro.io, Vet Panel, Pet Panel, Marine Panel ve Stok Panel ile işletmenizi dijitalleştirin.",
+    "Marssoft, küçük ve orta ölçekli işletmeler için geliştirilmiş bulut tabanlı SaaS yazılım çözümleri sunar. SalonPro.io, DoktorPlan, Vet Panel, Pet Panel, Marine Panel ve Stok Panel ile işletmenizi dijitalleştirin.",
   keywords: [
     "SaaS yazılım", "KOBİ yazılımı", "bulut yazılım", "güzellik salonu yazılımı",
     "kuaför programı", "SalonPro", "randevu programı", "veteriner yazılımı",
-    "Vet Panel", "Pet Panel", "petshop yazılımı", "marina yazılımı", "Marine Panel",
+    "DoktorPlan", "klinik randevu yazılımı", "Vet Panel", "Pet Panel", "petshop yazılımı", "marina yazılımı", "Marine Panel",
     "stok takip programı", "Stok Panel", "envanter yönetimi", "Marssoft",
     "dijital dönüşüm", "işletme yönetim yazılımı",
   ],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Marssoft",
     title: "Marssoft — KOBİ'lerin Dijital Dönüşüm Ortağı",
     description:
-      "SalonPro.io, Vet Panel, Pet Panel, Marine Panel ve Stok Panel — işletmeniz için hazır bulut SaaS çözümleri.",
+      "SalonPro.io, DoktorPlan, Vet Panel, Pet Panel, Marine Panel ve Stok Panel — işletmeniz için hazır bulut SaaS çözümleri.",
     images: [
       {
         url: "/og-image.png",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Marssoft — KOBİ'lerin Dijital Dönüşüm Ortağı",
     description:
-      "SalonPro.io, Vet Panel, Pet Panel, Marine Panel ve Stok Panel ile işletmenizi dijitalleştirin.",
+      "SalonPro.io, DoktorPlan, Vet Panel, Pet Panel, Marine Panel ve Stok Panel ile işletmenizi dijitalleştirin.",
     images: ["/og-image.png"],
     site: "@marssoft",
     creator: "@marssoft",

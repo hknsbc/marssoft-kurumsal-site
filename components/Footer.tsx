@@ -1,4 +1,5 @@
 ﻿import Link from "next/link";
+import PaymentLogos from "@/components/PaymentLogos";
 
 function TwitterIcon() {
   return (
@@ -40,8 +41,15 @@ const quickLinks = [
   { href: "/contact", label: "İletişim" },
 ];
 
+const legalLinks = [
+  { href: "/privacy", label: "Gizlilik Sözleşmesi" },
+  { href: "/distance-sales", label: "Mesafeli Satış Sözleşmesi" },
+  { href: "/delivery-returns", label: "Teslimat ve İade Şartları" },
+];
+
 const products = [
   { href: "/solutions#salonpro", label: "SalonPro.io" },
+  { href: "/solutions#doktorplan", label: "DoktorPlan" },
   { href: "/solutions#vetpanel", label: "Vet Panel" },
   { href: "/solutions#petpanel", label: "Pet Panel" },
   { href: "/solutions#marinepanel", label: "Marine Panel" },
@@ -50,16 +58,13 @@ const products = [
 
 export default function Footer() {
   return (
-    <footer id="marssoft-global-footer" style={{ background: "#060610", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-8">
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
-
-          {/* Brand */}
+    <footer id="marssoft-global-footer" className="border-t border-white/[0.07] bg-[#06070b]">
+      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="mb-12 grid gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-2">
-            <Link href="/" className="inline-flex items-center mb-4 select-none">
+            <Link href="/" className="mb-4 inline-flex select-none items-center">
               <span
-                className="text-[28px] font-black tracking-[-0.5px] leading-none"
+                className="text-[28px] font-black leading-none tracking-[-0.5px]"
                 style={{
                   background: "linear-gradient(135deg, #B8860B 0%, #D4A017 30%, #F0CC6A 55%, #D4A017 75%, #B8860B 100%)",
                   WebkitBackgroundClip: "text",
@@ -71,15 +76,18 @@ export default function Footer() {
                 Marssoft
               </span>
             </Link>
-            <p className="text-[13.5px] leading-[1.7] mb-5 max-w-xs" style={{ color: "rgba(255,255,255,0.38)" }}>
+            <p className="mb-5 max-w-xs text-[13.5px] leading-[1.7] text-white/45">
               KOBİ&apos;lere özel, global ölçekte hizmet veren bulut tabanlı SaaS şirketi. Ataşehir, İstanbul.
             </p>
             <div className="flex items-center gap-2">
               {socialLinks.map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-8 h-8 rounded-lg flex items-center justify-center transition-all hover:-translate-y-0.5"
-                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", color: "rgba(255,255,255,0.45)" }}
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.05] text-white/45 transition-all hover:-translate-y-0.5 hover:text-white/80"
                 >
                   {s.icon}
                 </a>
@@ -87,18 +95,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h6 className="text-[12px] font-semibold uppercase tracking-[1.5px] mb-4" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <h6 className="mb-4 text-[12px] font-semibold uppercase tracking-[1.5px] text-white/35">
               Sayfalar
             </h6>
             <ul className="space-y-2.5">
               {quickLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href}
-                    className="text-[13.5px] transition-colors hover:text-white/80"
-                    style={{ color: "rgba(255,255,255,0.4)" }}
-                  >
+                  <Link href={l.href} className="text-[13.5px] text-white/40 transition-colors hover:text-white/80">
                     {l.label}
                   </Link>
                 </li>
@@ -106,63 +110,50 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Products + Contact */}
           <div>
-            <h6 className="text-[12px] font-semibold uppercase tracking-[1.5px] mb-4" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <h6 className="mb-4 text-[12px] font-semibold uppercase tracking-[1.5px] text-white/35">
               Ürünler
             </h6>
-            <ul className="space-y-2.5 mb-7">
+            <ul className="mb-7 space-y-2.5">
               {products.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href}
-                    className="text-[13.5px] transition-colors hover:text-white/80"
-                    style={{ color: "rgba(255,255,255,0.4)" }}
-                  >
+                  <Link href={l.href} className="text-[13.5px] text-white/40 transition-colors hover:text-white/80">
                     {l.label}
                   </Link>
                 </li>
               ))}
             </ul>
 
-            <h6 className="text-[12px] font-semibold uppercase tracking-[1.5px] mb-4" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <h6 className="mb-4 text-[12px] font-semibold uppercase tracking-[1.5px] text-white/35">
               İletişim
             </h6>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:pazarlama@marssoft.com.tr"
-                  className="text-[13px] transition-colors hover:text-white/70"
-                  style={{ color: "rgba(255,255,255,0.38)" }}
-                >
+                <a href="mailto:pazarlama@marssoft.com.tr" className="text-[13px] text-white/40 transition-colors hover:text-white/70">
                   pazarlama@marssoft.com.tr
                 </a>
               </li>
-              <li className="text-[13px]" style={{ color: "rgba(255,255,255,0.38)" }}>
-                Ataşehir, İstanbul
-              </li>
+              <li className="text-[13px] text-white/40">Ataşehir, İstanbul</li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 pt-6"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
-        >
-          <p className="text-[12px]" style={{ color: "rgba(255,255,255,0.28)" }}>
-            © {new Date().getFullYear()} Marssoft Yazılım. Tüm hakları saklıdır.
-          </p>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-[12px] transition-colors hover:text-white/50" style={{ color: "rgba(255,255,255,0.28)" }}>
-              Gizlilik Politikası
-            </Link>
-            <Link href="/terms" className="text-[12px] transition-colors hover:text-white/50" style={{ color: "rgba(255,255,255,0.28)" }}>
-              Kullanım Koşulları
-            </Link>
+        <div className="mb-6 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-6 sm:flex-row">
+          <PaymentLogos />
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            {legalLinks.map((l) => (
+              <Link key={l.href} href={l.href} className="text-[12px] text-white/40 transition-colors hover:text-white/70">
+                {l.label}
+              </Link>
+            ))}
           </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/[0.06] pt-6 sm:flex-row">
+          <p className="text-[12px] text-white/30">© {new Date().getFullYear()} Marssoft Yazılım. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>
   );
 }
-
-
 

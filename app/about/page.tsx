@@ -1,4 +1,5 @@
 ﻿import Link from "next/link";
+import { company } from "@/lib/company";
 
 const features = [
   "Bulut tabanlı & güvenli altyapı",
@@ -98,6 +99,20 @@ export default function About() {
               <div className="text-[12px] text-white/50">{s.l}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Firma Bilgileri */}
+      <section className="border-t border-[rgba(255,255,255,0.06)] px-6 lg:px-8 py-12">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-[20px] font-medium text-white mb-4">Firma Bilgileri</h2>
+          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-[14px] text-white/60">
+            <div><dt className="inline text-white/40">Unvan: </dt><dd className="inline">{company.legalName}</dd></div>
+            <div><dt className="inline text-white/40">Adres: </dt><dd className="inline">{company.address}</dd></div>
+            <div><dt className="inline text-white/40">Vergi Dairesi / No: </dt><dd className="inline">{company.taxOffice} / {company.taxNumber}</dd></div>
+            <div><dt className="inline text-white/40">Telefon: </dt><dd className="inline">{company.phone}</dd></div>
+            <div><dt className="inline text-white/40">E-posta: </dt><dd className="inline">{company.email}</dd></div>
+          </dl>
         </div>
       </section>
 

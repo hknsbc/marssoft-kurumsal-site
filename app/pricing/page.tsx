@@ -55,7 +55,7 @@ const faqs = [
 
 export const metadata = {
   title: "Fiyatlandırma",
-  description: "Marssoft SaaS yazılımları için esnek fiyatlandırma planları. SalonPro.io, Vet Panel, Pet Panel, Marine Panel ve Stok Panel için özel fiyat teklifi alın. 14 gün ücretsiz deneyin.",
+  description: "Marssoft SaaS yazılımları için esnek fiyatlandırma planları. SalonPro.io, DoktorPlan, Vet Panel, Pet Panel, Marine Panel ve Stok Panel için özel fiyat teklifi alın. 14 gün ücretsiz deneyin.",
   alternates: { canonical: "https://marssoft.com.tr/pricing" },
   openGraph: {
     title: "Fiyatlandırma | Marssoft",

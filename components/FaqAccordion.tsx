@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Ürünlerinizi ücretsiz deneyebilir miyim?",
-    a: "Evet. SalonPro.io, Vet Panel, Pet Panel, Marine Panel ve Stok Panel ürünlerinin tamamı için 14 günlük tam özellikli ücretsiz deneme sunuyoruz. Kredi kartı bilgisi gerekmez.",
+    a: "Evet. SalonPro.io, DoktorPlan, Vet Panel, Pet Panel, Marine Panel ve Stok Panel ürünlerinin tamamı için 14 günlük tam özellikli ücretsiz deneme sunuyoruz. Kredi kartı bilgisi gerekmez.",
   },
   {
     q: "Kurulum süreci ne kadar sürer?",

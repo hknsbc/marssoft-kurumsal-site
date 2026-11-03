@@ -23,7 +23,29 @@ const products = [
     borderHover: "hover:border-[rgba(212,160,23,0.4)]",
   },
   {
-    id: "Vet Panel",
+    id: "doktorplan",
+    icon: "🩺",
+    iconBg: "bg-[rgba(45,212,191,0.2)]",
+    name: "DoktorPlan",
+    tagline: "Klinik Randevu ve Yönetim Yazılımı",
+    desc: "Doktor muayenehaneleri ve klinikler için randevu, hasta takibi, hatırlatma ve kasa yönetimi tek panelde.",
+    features: [
+      "Online randevu alma",
+      "Hasta kartı & takip",
+      "WhatsApp / SMS hatırlatma",
+      "Çoklu doktor ve personel",
+      "Kasa & ödeme yönetimi",
+      "Mobil uyumlu, her cihazda",
+      "Dakikalar içinde kurulum",
+      "7 gün ücretsiz deneme",
+    ],
+    badge: "Yeni",
+    href: "https://doktorplan.com",
+    color: "rgba(45,212,191,0.1)",
+    borderHover: "hover:border-[rgba(45,212,191,0.35)]",
+  },
+  {
+    id: "vetpanel",
     icon: "🐾",
     iconBg: "bg-[rgba(29,158,117,0.2)]",
     name: "Vet Panel",
@@ -115,7 +137,7 @@ const whyUs = [
 
 export const metadata = {
   title: "Ürünlerimiz",
-  description: "SalonPro.io (kuaför & güzellik salonu), Vet Panel (veteriner kliniği), Pet Panel (petshop), Marine Panel (marina) ve Stok Panel (stok yönetimi) — tüm KOBİ yazılım çözümlerimizi keşfedin.",
+  description: "SalonPro.io (kuaför & güzellik salonu), DoktorPlan (klinik & muayenehane), Vet Panel (veteriner kliniği), Pet Panel (petshop), Marine Panel (marina) ve Stok Panel (stok yönetimi) — tüm KOBİ yazılım çözümlerimizi keşfedin.",
   keywords: ["SalonPro", "Vet Panel", "Pet Panel", "Marine Panel", "Stok Panel", "güzellik salonu yazılımı", "veteriner yazılımı", "petshop yazılımı", "marina yazılımı", "stok takip"],
   alternates: { canonical: "https://marssoft.com.tr/solutions" },
   openGraph: {
@@ -170,12 +192,23 @@ export default function Solutions() {
                     </div>
                   </div>
                   <p className="text-[14px] text-white/60 leading-[1.7] mb-6">{p.desc}</p>
-                  <Link
-                    href="/contact"
-                    className="inline-block bg-[#B8860B] hover:bg-[#9A7209] text-white px-5 py-2.5 rounded-lg text-[13px] font-medium transition-colors"
-                  >
-                    Ücretsiz Dene →
-                  </Link>
+                  {"href" in p ? (
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-[#B8860B] hover:bg-[#9A7209] text-white px-5 py-2.5 rounded-lg text-[13px] font-medium transition-colors"
+                    >
+                      Ücretsiz Dene →
+                    </a>
+                  ) : (
+                    <Link
+                      href="/contact"
+                      className="inline-block bg-[#B8860B] hover:bg-[#9A7209] text-white px-5 py-2.5 rounded-lg text-[13px] font-medium transition-colors"
+                    >
+                      Ücretsiz Dene →
+                    </Link>
+                  )}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {p.features.map((f) => (
