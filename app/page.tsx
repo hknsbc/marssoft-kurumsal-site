@@ -17,6 +17,9 @@ import Reveal from "@/components/Reveal";
 import { Eyebrow, GhostButton, GoldButton, SectionHeading } from "@/components/site/ui";
 import { BrowserMockup, ClinicMockup, StockMockup } from "@/components/site/mockups";
 import { products, type Product } from "@/lib/products";
+import Intro from "@/components/site/Intro";
+import HeroCanvas from "@/components/site/HeroCanvas";
+import TiltStage from "@/components/site/TiltStage";
 
 const sectors = [
   "Kurumsal Web Siteleri", "Klinik & Muayenehane", "Stok & Envanter", "Güzellik Salonları",
@@ -151,34 +154,36 @@ export default function Home() {
 
   return (
     <div className="relative bg-[#05060a] text-white">
+      <Intro />
       {/* ── Hero ── */}
       <section className="grain relative -mt-[68px] overflow-hidden pt-[68px] md:-mt-[76px] md:pt-[76px]">
         <div className="hero-grid-overlay" />
-        <div className="pointer-events-none absolute left-[10%] top-0 h-[560px] w-[560px] rounded-full bg-[#2B5EC8]/20 blur-[150px]" />
-        <div className="pointer-events-none absolute right-0 top-24 h-[380px] w-[380px] rounded-full bg-[#D4A017]/20 blur-[150px]" />
+        <div className="aurora-1 pointer-events-none absolute left-[10%] top-0 h-[560px] w-[560px] rounded-full bg-[#2B5EC8]/20 blur-[150px]" />
+        <div className="aurora-2 pointer-events-none absolute right-0 top-24 h-[380px] w-[380px] rounded-full bg-[#D4A017]/20 blur-[150px]" />
+        <HeroCanvas className="[mask-image:linear-gradient(180deg,#000_60%,transparent)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 pb-28 pt-20 lg:px-8 lg:pb-40 lg:pt-28">
           <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-[#D4A017]/30 bg-[#D4A017]/10 px-4 py-2 text-[11.5px] font-semibold uppercase tracking-[0.24em] text-[#F0CC6A]">
+              <div style={{ "--d": "0s" } as React.CSSProperties} className="hero-seq inline-flex items-center gap-2.5 rounded-full border border-[#D4A017]/30 bg-[#D4A017]/10 px-4 py-2 text-[11.5px] font-semibold uppercase tracking-[0.24em] text-[#F0CC6A]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#D4A017]" />
                 Web tasarım · Özel yazılım · SaaS
               </div>
               <h1 className="font-display mt-8 text-[52px] leading-[1.02] tracking-[-0.03em] text-white sm:text-7xl lg:text-[84px]">
-                Markanız
-                <span className="gold-text block italic">dijitalde fark</span>
-                yaratsın.
+                <span style={{ "--d": "0.15s" } as React.CSSProperties} className="hero-seq block">Markanız</span>
+                <span style={{ "--d": "0.3s" } as React.CSSProperties} className="hero-seq gold-shine block italic">dijitalde fark</span>
+                <span style={{ "--d": "0.45s" } as React.CSSProperties} className="hero-seq block">yaratsın.</span>
               </h1>
-              <p className="mt-8 max-w-xl text-base leading-8 text-white/60 sm:text-lg">
+              <p style={{ "--d": "0.65s" } as React.CSSProperties} className="hero-seq mt-8 max-w-xl text-base leading-8 text-white/60 sm:text-lg">
                 Marssoft; işletmenize özel <strong className="font-medium text-white/90">kurumsal web siteleri</strong> tasarlar ve{" "}
                 <strong className="font-medium text-white/90">DoktorPlan</strong>,{" "}
                 <strong className="font-medium text-white/90">Stok Panel</strong> gibi sektöre özel yazılımlarla operasyonunuzu tek panelden yönetmenizi sağlar.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div style={{ "--d": "0.85s" } as React.CSSProperties} className="hero-seq mt-10 flex flex-wrap gap-4">
                 <GoldButton href="/contact">Ücretsiz teklif alın</GoldButton>
                 <GhostButton href="/solutions">Yazılımlarımızı keşfedin</GhostButton>
               </div>
-              <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-[13px] text-white/50">
+              <div style={{ "--d": "1s" } as React.CSSProperties} className="hero-seq mt-10 flex flex-wrap gap-x-6 gap-y-3 text-[13px] text-white/50">
                 {["Özel tasarım", "Mobil uyumlu", "SEO hazır", "7/24 destek"].map((b) => (
                   <span key={b} className="flex items-center gap-2">
                     <Check size={14} className="text-[#D4A017]" /> {b}
@@ -188,20 +193,34 @@ export default function Home() {
             </div>
 
             {/* Layered visual: corporate site + software panel */}
-            <div className="relative mx-auto w-full max-w-[560px] pb-24 lg:max-w-none">
+            <TiltStage className="relative mx-auto w-full max-w-[560px] pb-24 lg:max-w-none">
               <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-[#D4A017]/15 to-[#2B5EC8]/20 blur-3xl" />
-              <BrowserMockup className="animate-float-slow relative" />
-              <div className="absolute -bottom-28 -left-4 hidden w-[58%] sm:block lg:-left-14">
-                <ClinicMockup className="[transform:rotate(-2deg)]" />
+              <div style={{ "--d": "0.5s" } as React.CSSProperties} className="hero-seq-pop tilt-layer relative">
+                <BrowserMockup className="animate-float-slow relative" />
+                <div className="tilt-float absolute -bottom-28 -left-4 hidden w-[58%] sm:block lg:-left-14">
+                  <div style={{ "--d": "1.1s" } as React.CSSProperties} className="hero-seq-pop">
+                    <ClinicMockup className="[transform:rotate(-2deg)]" />
+                  </div>
+                </div>
+                <div className="tilt-float absolute -right-3 -top-6 hidden sm:block">
+                  <div
+                    style={{ "--d": "1.4s" } as React.CSSProperties}
+                    className="hero-seq-pop rounded-2xl border border-[#D4A017]/30 bg-[#0a0b11]/95 px-4 py-3 shadow-2xl backdrop-blur"
+                  >
+                    <p className="text-[10.5px] uppercase tracking-[0.2em] text-white/40">Her cihazda</p>
+                    <p className="font-display gold-text text-2xl">Mobil uyumlu</p>
+                  </div>
+                </div>
               </div>
-              <div className="absolute -right-3 -top-6 hidden rounded-2xl border border-[#D4A017]/30 bg-[#0a0b11]/95 px-4 py-3 shadow-2xl backdrop-blur sm:block">
-                <p className="text-[10.5px] uppercase tracking-[0.2em] text-white/40">Her cihazda</p>
-                <p className="font-display gold-text text-2xl">Mobil uyumlu</p>
-              </div>
-            </div>
+            </TiltStage>
           </div>
         </div>
 
+        <div style={{ "--d": "1.6s" } as React.CSSProperties} className="hero-seq absolute inset-x-0 bottom-6 hidden justify-center lg:flex" aria-hidden="true">
+          <div className="flex h-9 w-[22px] justify-center rounded-full border border-white/25 pt-2">
+            <span className="scroll-dot h-1.5 w-1 rounded-full bg-[#F0CC6A]" />
+          </div>
+        </div>
       </section>
 
       {/* ── Marquee ── */}
