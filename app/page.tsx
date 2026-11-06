@@ -303,7 +303,7 @@ export default function Home() {
       </section>
 
       {/* ── Flagship products ── */}
-      <section id="urunler" className="relative border-t border-white/[0.06] bg-white/[0.012] py-24 lg:py-32">
+      <section id="urunler" className="relative overflow-x-clip border-t border-white/[0.06] bg-white/[0.012] py-24 lg:py-32">
         <div className="mx-auto max-w-7xl space-y-28 px-6 lg:space-y-40 lg:px-8">
           <SectionHeading
             eyebrow="Öne çıkan yazılımlar"

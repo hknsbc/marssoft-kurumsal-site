@@ -27,11 +27,11 @@ export default function Intro() {
     } catch {}
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const ready = setTimeout(() => root.classList.add("hero-ready"), 1900);
+    const ready = setTimeout(() => root.classList.add("hero-ready"), 3500);
     const done = setTimeout(() => {
       setVisible(false);
       document.body.style.overflow = prevOverflow;
-    }, 2700);
+    }, 4700);
     return () => {
       clearTimeout(ready);
       clearTimeout(done);
@@ -47,7 +47,7 @@ export default function Intro() {
       <div className="relative flex flex-col items-center">
         <div className="font-display gold-text flex text-[56px] font-semibold leading-none tracking-[-0.02em] sm:text-[88px]">
           {letters.map((l, i) => (
-            <span key={i} className="intro-letter" style={{ animationDelay: `${0.15 + i * 0.07}s` }}>
+            <span key={i} className="intro-letter" style={{ animationDelay: `${0.25 + i * 0.11}s` }}>
               {l}
             </span>
           ))}
