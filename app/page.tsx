@@ -12,6 +12,7 @@ import {
   Rocket,
   Search,
   ShieldCheck,
+  Stethoscope,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { Eyebrow, GhostButton, GoldButton, SectionHeading } from "@/components/site/ui";
@@ -162,63 +163,76 @@ export default function Home() {
         <div className="aurora-2 pointer-events-none absolute right-0 top-24 h-[380px] w-[380px] rounded-full bg-[#D4A017]/20 blur-[150px]" />
         <HeroCanvas className="[mask-image:linear-gradient(180deg,#000_60%,transparent)]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 pb-28 pt-20 lg:px-8 lg:pb-40 lg:pt-28">
-          <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-14 lg:px-8 lg:pt-20">
+          <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <div style={{ "--d": "0s" } as React.CSSProperties} className="hero-seq inline-flex items-center gap-2.5 rounded-full border border-[#D4A017]/30 bg-[#D4A017]/10 px-4 py-2 text-[11.5px] font-semibold uppercase tracking-[0.24em] text-[#F0CC6A]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#D4A017]" />
-                Web tasarım · Özel yazılım · SaaS
+                Web sitesi · DoktorPlan · Özel yazılım
               </div>
-              <h1 className="font-display mt-8 text-[52px] leading-[1.02] tracking-[-0.03em] text-white sm:text-7xl lg:text-[84px]">
-                <span style={{ "--d": "0.15s" } as React.CSSProperties} className="hero-seq block">Markanız</span>
+              <h1 className="font-display mt-7 text-[46px] leading-[1.02] tracking-[-0.03em] text-white sm:text-7xl lg:text-[72px]">
+                <span style={{ "--d": "0.15s" } as React.CSSProperties} className="hero-seq block">Markanız ve kliniğiniz</span>
                 <span style={{ "--d": "0.3s" } as React.CSSProperties} className="hero-seq gold-shine block italic">dijitalde fark</span>
                 <span style={{ "--d": "0.45s" } as React.CSSProperties} className="hero-seq block">yaratsın.</span>
               </h1>
-              <p style={{ "--d": "0.65s" } as React.CSSProperties} className="hero-seq mt-8 max-w-xl text-base leading-8 text-white/60 sm:text-lg">
-                Marssoft; işletmenize özel <strong className="font-medium text-white/90">kurumsal web siteleri</strong> tasarlar ve{" "}
-                <strong className="font-medium text-white/90">DoktorPlan</strong>,{" "}
-                <strong className="font-medium text-white/90">Stok Panel</strong> gibi sektöre özel yazılımlarla operasyonunuzu tek panelden yönetmenizi sağlar.
+              <p style={{ "--d": "0.65s" } as React.CSSProperties} className="hero-seq mt-6 max-w-xl text-base leading-8 text-white/60 sm:text-lg">
+                İşletmeniz için <strong className="font-medium text-white/90">kurumsal web sitesi</strong> yapıyor,
+                doktor ve klinikler için <strong className="font-medium text-white/90">DoktorPlan</strong> ile randevu ve hasta yönetimini tek panelde topluyoruz.
               </p>
-              <div style={{ "--d": "0.85s" } as React.CSSProperties} className="hero-seq mt-10 flex flex-wrap gap-4">
-                <GoldButton href="/contact">Ücretsiz teklif alın</GoldButton>
-                <GhostButton href="/solutions">Yazılımlarımızı keşfedin</GhostButton>
-              </div>
-              <div style={{ "--d": "1s" } as React.CSSProperties} className="hero-seq mt-10 flex flex-wrap gap-x-6 gap-y-3 text-[13px] text-white/50">
-                {["Özel tasarım", "Mobil uyumlu", "SEO hazır", "7/24 destek"].map((b) => (
-                  <span key={b} className="flex items-center gap-2">
-                    <Check size={14} className="text-[#D4A017]" /> {b}
-                  </span>
-                ))}
+              <div style={{ "--d": "0.85s" } as React.CSSProperties} className="hero-seq mt-8 flex flex-wrap gap-4">
+                <GoldButton href="/web-tasarim">Web sitesi teklifi alın</GoldButton>
+                <a
+                  href="https://doktorplan.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#2dd4bf]/40 bg-[#2dd4bf]/10 px-7 py-3.5 text-sm font-semibold text-[#5eead4] transition hover:border-[#2dd4bf]/70 hover:bg-[#2dd4bf]/15"
+                >
+                  DoktorPlan&apos;ı deneyin <ArrowUpRight size={16} />
+                </a>
               </div>
             </div>
 
-            {/* Layered visual: corporate site + software panel */}
-            <TiltStage className="relative mx-auto w-full max-w-[560px] pb-24 lg:max-w-none">
+            {/* Layered visual: corporate site + DoktorPlan */}
+            <TiltStage className="relative mx-auto w-full max-w-[560px] pb-20 lg:max-w-none">
               <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-[#D4A017]/15 to-[#2B5EC8]/20 blur-3xl" />
               <div style={{ "--d": "0.5s" } as React.CSSProperties} className="hero-seq-pop tilt-layer relative">
                 <BrowserMockup className="animate-float-slow relative" />
-                <div className="tilt-float absolute -bottom-28 -left-4 hidden w-[58%] sm:block lg:-left-14">
+                <div className="tilt-float absolute -left-3 -top-5 hidden sm:block">
+                  <span style={{ "--d": "1.2s" } as React.CSSProperties} className="hero-seq-pop inline-flex items-center gap-2 rounded-full border border-[#94B8F0]/40 bg-[#0a0b11]/95 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#94B8F0] shadow-xl backdrop-blur">
+                    <Layers size={13} /> Kurumsal web sitesi
+                  </span>
+                </div>
+                <div className="tilt-float absolute -bottom-24 -left-4 hidden w-[58%] sm:block lg:-left-14">
                   <div style={{ "--d": "1.1s" } as React.CSSProperties} className="hero-seq-pop">
                     <ClinicMockup className="[transform:rotate(-2deg)]" />
-                  </div>
-                </div>
-                <div className="tilt-float absolute -right-3 -top-6 hidden sm:block">
-                  <div
-                    style={{ "--d": "1.4s" } as React.CSSProperties}
-                    className="hero-seq-pop rounded-2xl border border-[#D4A017]/30 bg-[#0a0b11]/95 px-4 py-3 shadow-2xl backdrop-blur"
-                  >
-                    <p className="text-[10.5px] uppercase tracking-[0.2em] text-white/40">Her cihazda</p>
-                    <p className="font-display gold-text text-2xl">Mobil uyumlu</p>
                   </div>
                 </div>
               </div>
             </TiltStage>
           </div>
-        </div>
 
-        <div style={{ "--d": "1.6s" } as React.CSSProperties} className="hero-seq absolute inset-x-0 bottom-6 hidden justify-center lg:flex" aria-hidden="true">
-          <div className="flex h-9 w-[22px] justify-center rounded-full border border-white/25 pt-2">
-            <span className="scroll-dot h-1.5 w-1 rounded-full bg-[#F0CC6A]" />
+          {/* Two offerings, visible on first screen */}
+          <div style={{ "--d": "1.3s" } as React.CSSProperties} className="hero-seq relative mt-6 grid gap-4 md:grid-cols-2">
+            <Link href="/web-tasarim" className="card-premium group flex items-center gap-5 rounded-3xl p-5 sm:p-6">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#94B8F0]/30 bg-[#2B5EC8]/15 text-[#94B8F0]">
+                <Layers size={24} />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-[#94B8F0]">Kurumsal web sitesi</span>
+                <span className="font-display mt-1 block text-xl text-white sm:text-2xl">Markanıza özel tasarım, SEO ve yayın</span>
+              </span>
+              <ArrowUpRight size={20} className="shrink-0 text-white/40 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+            </Link>
+            <a href="https://doktorplan.com" target="_blank" rel="noopener noreferrer" className="card-premium group flex items-center gap-5 rounded-3xl p-5 sm:p-6">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#2dd4bf]/30 bg-[#2dd4bf]/12 text-[#2dd4bf]">
+                <Stethoscope size={24} />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-[#2dd4bf]">DoktorPlan · 7 gün ücretsiz</span>
+                <span className="font-display mt-1 block text-xl text-white sm:text-2xl">Randevu, hasta takibi ve kasa tek panelde</span>
+              </span>
+              <ArrowUpRight size={20} className="shrink-0 text-white/40 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+            </a>
           </div>
         </div>
       </section>
