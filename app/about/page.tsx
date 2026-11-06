@@ -1,4 +1,6 @@
-﻿import Link from "next/link";
+﻿import { Check } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import { GhostButton, GoldButton, PageHero, SectionHeading } from "@/components/site/ui";
 import { company } from "@/lib/company";
 
 const features = [
@@ -10,17 +12,16 @@ const features = [
   "Düzenli güncellemeler & yenilikler",
 ];
 
-const metrics = [
-  { label: "Müşteri Memnuniyeti", value: "96%", width: "96%" },
-  { label: "Sistem Uptime", value: "99.9%", width: "99%" },
-  { label: "Destek Yanıt Süresi", value: "<2 saat", width: "85%" },
-  { label: "Müşteri Tutma Oranı", value: "94%", width: "94%" },
+const facts = [
+  { v: "2020", l: "Kuruluş yılı" },
+  { v: "7/24", l: "Teknik destek" },
+  { v: "İstanbul", l: "Merkez ofis" },
 ];
-
 
 export const metadata = {
   title: "Hakkımızda",
-  description: "Marssoft, KOBİ'lerin dijital dönüşümünü hızlandırmak için bulut tabanlı SaaS yazılımlar geliştiren global bir yazılım şirketidir. Misyonumuz, her ölçekteki işletmeye erişilebilir teknoloji sunmaktır.",
+  description:
+    "Marssoft; kurumsal web siteleri tasarlayan ve KOBİ'ler için DoktorPlan, Stok Panel gibi bulut tabanlı yazılımlar geliştiren bir yazılım şirketidir.",
   alternates: { canonical: "https://marssoft.com.tr/about" },
   openGraph: {
     title: "Hakkımızda | Marssoft",
@@ -31,104 +32,83 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="bg-[#0a0a1a] text-white">
-      {/* Hero */}
-      <section className="border-b border-[rgba(255,255,255,0.08)] px-6 lg:px-8 py-16"
-        style={{ background: "linear-gradient(135deg, #0a0a1a 0%, #1a1040 50%, #0d1a30 100%)" }}>
-        <div className="max-w-6xl mx-auto max-w-[600px]">
-          <div className="text-[12px] text-[#D4A017] uppercase tracking-[2px] mb-3">Hakkımızda</div>
-          <h1 className="text-[36px] md:text-[28px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
-            KOBİ&apos;lerin Dijital Dönüşüm <span className="text-[#D4A017]">Ortağı</span>
-          </h1>
-          <p className="text-[16px] text-white/60 leading-[1.7]">
-            2020&apos;den bu yana KOBİ&apos;ler için bulut tabanlı SaaS yazılımlar geliştiriyoruz. Amacımız teknolojiyi sınır tanımadan herkes için erişilebilir kılmak.
-          </p>
-        </div>
-      </section>
+    <div className="bg-[#05060a] text-white">
+      <PageHero
+        eyebrow="Hakkımızda"
+        title="İşletmelerin dijital"
+        accent="dönüşüm ortağı."
+        description="2020'den bu yana işletmeler için kurumsal web siteleri tasarlıyor ve sektöre özel bulut yazılımlar geliştiriyoruz. Amacımız teknolojiyi her ölçekteki işletme için erişilebilir kılmak."
+      />
 
-      {/* About Content */}
-      <section className="px-6 lg:px-8 py-16">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-[26px] font-medium text-white leading-[1.3] mb-4">
-              KOBİ&apos;lerin İşini Kolaylaştıran Bulut Tabanlı Yazılımlar
-            </h2>
-            <p className="text-[15px] text-white/60 leading-[1.7] mb-4">
-              Marssoft olarak global ölçekte faaliyet gösteren bir SaaS yazılım şirketi olarak, küçük ve orta ölçekli işletmelere sınır tanımayan dijital çözümler sunuyoruz.
+      <section className="py-24 lg:py-32">
+        <div className="mx-auto grid max-w-7xl items-start gap-16 px-6 lg:grid-cols-2 lg:px-8">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Biz kimiz"
+              title="Hem web siteniz hem"
+              accent="yazılımınız tek ekipten."
+            />
+            <p className="mt-6 text-[15.5px] leading-8 text-white/60">
+              Marssoft olarak küçük ve orta ölçekli işletmelere iki alanda hizmet veriyoruz: markalarını yansıtan kurumsal web siteleri ve günlük operasyonlarını yöneten sektöre özel yazılımlar.
             </p>
-            <p className="text-[15px] text-white/60 leading-[1.7] mb-6">
-              Veteriner klinikleri, güzellik salonları ve perakende işletmeler için sektöre özgü, kullanımı kolay yazılımlar üretiyoruz. Her ürün, gerçek kullanıcı geri bildirimleriyle sürekli gelişiyor.
+            <p className="mt-4 text-[15.5px] leading-8 text-white/60">
+              Klinikler, güzellik salonları, veteriner ve perakende işletmeleri için kullanımı kolay ürünler üretiyoruz. Her ürün, gerçek kullanıcı geri bildirimleriyle sürekli gelişiyor.
             </p>
-            <div className="space-y-2.5">
-              {features.map((f) => (
-                <div key={f} className="flex items-center gap-2.5 text-[14px] text-white/70">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017] flex-shrink-0" />
-                  {f}
-                </div>
-              ))}
+            <div className="mt-8 flex flex-wrap gap-4">
+              <GoldButton href="/contact">İletişime geçin</GoldButton>
+              <GhostButton href="/solutions">Ürünlerimiz</GhostButton>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="bg-[rgba(27,61,128,0.1)] border border-[rgba(43,94,200,0.2)] rounded-2xl p-8 space-y-6">
-            {metrics.map((m) => (
-              <div key={m.label}>
-                <div className="flex justify-between text-[12px] text-white/50 mb-2">
-                  <span>{m.label}</span>
-                  <span>{m.value}</span>
-                </div>
-                <div className="h-1.5 bg-[rgba(255,255,255,0.06)] rounded-full">
-                  <div className="h-1.5 rounded-full" style={{ width: m.width, background: "linear-gradient(90deg, #B8860B, #D4A017)" }} />
-                </div>
-              </div>
-            ))}
-          </div>
+          <Reveal delay={120}>
+            <div className="card-premium rounded-[28px] p-8 sm:p-10">
+              <ul className="space-y-4">
+                {features.map((f) => (
+                  <li key={f} className="flex items-center gap-3.5 text-[15px] text-white/75">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#D4A017]/15 text-[#D4A017]">
+                      <Check size={13} strokeWidth={3} />
+                    </span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="border-t border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { v: "500+", l: "Global İşletme" },
-            { v: "15+", l: "Ülke" },
-            { v: "2020", l: "Kuruluş Yılı" },
-            { v: "7/24", l: "Teknik Destek" },
-          ].map((s) => (
-            <div key={s.l}>
-              <div className="text-[32px] font-medium text-[#D4A017] mb-1">{s.v}</div>
-              <div className="text-[12px] text-white/50">{s.l}</div>
+      <section className="border-y border-white/[0.07] bg-white/[0.02]">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 py-12 text-center sm:grid-cols-3 lg:px-8">
+          {facts.map((f) => (
+            <div key={f.l}>
+              <p className="font-display gold-text text-4xl sm:text-5xl">{f.v}</p>
+              <p className="mt-2 text-[11.5px] uppercase tracking-[0.2em] text-white/45">{f.l}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Firma Bilgileri */}
-      <section className="border-t border-[rgba(255,255,255,0.06)] px-6 lg:px-8 py-12">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-[20px] font-medium text-white mb-4">Firma Bilgileri</h2>
-          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-[14px] text-white/60">
-            <div><dt className="inline text-white/40">Unvan: </dt><dd className="inline">{company.legalName}</dd></div>
-            <div><dt className="inline text-white/40">Adres: </dt><dd className="inline">{company.address}</dd></div>
-            <div><dt className="inline text-white/40">Vergi Dairesi / No: </dt><dd className="inline">{company.taxOffice} / {company.taxNumber}</dd></div>
-            <div><dt className="inline text-white/40">Telefon: </dt><dd className="inline">{company.phone}</dd></div>
-            <div><dt className="inline text-white/40">E-posta: </dt><dd className="inline">{company.email}</dd></div>
-          </dl>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="border-t border-[rgba(255,255,255,0.08)] px-6 lg:px-8 py-14 text-center">
-        <div className="max-w-lg mx-auto">
-          <h2 className="text-[26px] font-medium text-white mb-3">Bizimle çalışmak ister misiniz?</h2>
-          <p className="text-[15px] text-white/50 mb-7">Ürünlerimizi deneyin veya özel çözüm için bize ulaşın.</p>
-          <Link href="/contact" className="inline-block bg-[#B8860B] hover:bg-[#9A7209] text-white px-6 py-3 rounded-lg text-[14px] font-medium transition-colors">
-            İletişime Geç
-          </Link>
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <Reveal>
+            <h2 className="font-display text-3xl text-white">Firma bilgileri</h2>
+            <dl className="mt-8 grid gap-4 text-[14px] sm:grid-cols-2">
+              {[
+                ["Unvan", company.legalName],
+                ["Adres", company.address],
+                ["Vergi Dairesi / No", `${company.taxOffice} / ${company.taxNumber}`],
+                ["Telefon", company.phone],
+                ["E-posta", company.email],
+              ].map(([k, v]) => (
+                <div key={k} className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5">
+                  <dt className="text-[11.5px] uppercase tracking-[0.18em] text-white/40">{k}</dt>
+                  <dd className="mt-1.5 text-white/80">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
         </div>
       </section>
     </div>
   );
 }
-
-
-

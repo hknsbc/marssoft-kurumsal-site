@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 // ─── Icon Components ──────────────────────────────────────────────────────────
 
@@ -249,10 +248,10 @@ export default function SalonProPage() {
       {/* ════════════════════════════════════════════════════════════
           NAVIGATION
       ════════════════════════════════════════════════════════════ */}
-      <nav className="sticky top-0 z-50 border-b"
+      <nav className="sticky top-[68px] md:top-[76px] z-40 border-b"
         style={{ background: "rgba(9,9,15,0.92)", backdropFilter: "blur(20px)", borderColor: "rgba(255,255,255,0.07)" }}
       >
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 h-[68px] flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-7 h-7 rounded-[8px] flex items-center justify-center text-[13px] font-bold text-white"
               style={{ background: "linear-gradient(135deg,#7B6EF6,#A78BFA)" }}>S</div>
@@ -314,7 +313,7 @@ export default function SalonProPage() {
                 <span className="text-[12px] font-medium" style={{ color: "#C4B5FD" }}>Türkiye&apos;nin #1 Salon Yönetim Yazılımı</span>
               </div>
 
-              <h1 className="text-[46px] lg:text-[56px] font-bold leading-[1.1] tracking-[-1.5px] mb-5">
+              <h1 className="font-display text-[46px] lg:text-[64px] font-normal leading-[1.05] tracking-[-0.03em] mb-5">
                 Salonunuzu{" "}
                 <span style={{ background: "linear-gradient(135deg,#A78BFA,#EC4899)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                   büyütün
@@ -475,7 +474,7 @@ export default function SalonProPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <div className="text-[11px] font-semibold tracking-[2.5px] uppercase mb-3" style={{ color: "#A78BFA" }}>Özellikler</div>
-            <h2 className="text-[36px] font-bold tracking-[-0.5px] text-white mb-4">Salonunuzu yönetmek bu kadar kolay</h2>
+            <h2 className="font-display text-[40px] font-normal tracking-[-0.02em] text-white mb-4">Salonunuzu yönetmek bu kadar kolay</h2>
             <p className="text-[15px] max-w-md mx-auto" style={{ color: "rgba(255,255,255,0.45)" }}>
               Randevudan raporlamaya, personel yönetiminden müşteri iletişimine kadar her şey tek platformda.
             </p>
@@ -519,7 +518,7 @@ export default function SalonProPage() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-14">
             <div className="text-[11px] font-semibold tracking-[2.5px] uppercase mb-3" style={{ color: "#A78BFA" }}>Arayüz</div>
-            <h2 className="text-[36px] font-bold tracking-[-0.5px] text-white mb-4">Her şey tek ekranda</h2>
+            <h2 className="font-display text-[40px] font-normal tracking-[-0.02em] text-white mb-4">Her şey tek ekranda</h2>
             <p className="text-[15px] max-w-lg mx-auto" style={{ color: "rgba(255,255,255,0.45)" }}>
               Sezgisel, temiz ve hızlı tasarımıyla SalonPro.io&apos;ya alışmak sadece birkaç dakika sürer.
             </p>
@@ -662,7 +661,7 @@ export default function SalonProPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
             <div className="text-[11px] font-semibold tracking-[2.5px] uppercase mb-3" style={{ color: "#A78BFA" }}>Nasıl Çalışır?</div>
-            <h2 className="text-[36px] font-bold tracking-[-0.5px] text-white">3 adımda başlayın</h2>
+            <h2 className="font-display text-[40px] font-normal tracking-[-0.02em] text-white">3 adımda başlayın</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
             {/* Connector line */}
@@ -698,7 +697,7 @@ export default function SalonProPage() {
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center mb-14">
             <div className="text-[11px] font-semibold tracking-[2.5px] uppercase mb-3" style={{ color: "#A78BFA" }}>Fiyatlandırma</div>
-            <h2 className="text-[36px] font-bold tracking-[-0.5px] text-white mb-4">Salonunuza uygun plan</h2>
+            <h2 className="font-display text-[40px] font-normal tracking-[-0.02em] text-white mb-4">Salonunuza uygun plan</h2>
           <p className="text-[15px]" style={{ color: "rgba(255,255,255,0.45)" }}>
             Planınızı seçin, fiyat teklifi için bizimle iletişime geçin.
           </p>
@@ -766,7 +765,7 @@ export default function SalonProPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <div className="text-[11px] font-semibold tracking-[2.5px] uppercase mb-3" style={{ color: "#A78BFA" }}>Yorumlar</div>
-            <h2 className="text-[36px] font-bold tracking-[-0.5px] text-white">Salonlar konuşuyor</h2>
+            <h2 className="font-display text-[40px] font-normal tracking-[-0.02em] text-white">Salonlar konuşuyor</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {TESTIMONIALS.map((t, i) => (
@@ -800,7 +799,7 @@ export default function SalonProPage() {
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <div className="text-[11px] font-semibold tracking-[2.5px] uppercase mb-3" style={{ color: "#A78BFA" }}>SSS</div>
-            <h2 className="text-[36px] font-bold tracking-[-0.5px] text-white">Sık Sorulan Sorular</h2>
+            <h2 className="font-display text-[40px] font-normal tracking-[-0.02em] text-white">Sık Sorulan Sorular</h2>
           </div>
 
           <div className="space-y-2">
@@ -874,83 +873,6 @@ export default function SalonProPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════════════════
-          FOOTER
-      ════════════════════════════════════════════════════════════ */}
-      <footer style={{ background: "#060610", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-            <div className="md:col-span-2">
-              <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-7 h-7 rounded-[8px] flex items-center justify-center text-[13px] font-bold text-white"
-                  style={{ background: "linear-gradient(135deg,#7B6EF6,#A78BFA)" }}>S</div>
-                <span className="text-[18px] font-semibold tracking-[-0.4px]">
-                  <span className="text-white">SalonPro</span>
-                  <span style={{ color: "#A78BFA" }}>.io</span>
-                </span>
-              </div>
-              <p className="text-[13.5px] leading-[1.7] mb-5 max-w-xs" style={{ color: "rgba(255,255,255,0.38)" }}>
-                Kuaför ve güzellik salonları için geliştirilmiş, bulut tabanlı randevu ve salon yönetim yazılımı.
-              </p>
-              <p className="text-[13px]" style={{ color: "rgba(255,255,255,0.3)" }}>
-                Bir{" "}
-                <a href="https://marssoft.com.tr" className="underline underline-offset-2 transition-colors hover:text-white/50"
-                  style={{ color: "rgba(255,255,255,0.4)" }}>Marssoft</a>
-                {" "}ürünüdür.
-              </p>
-
-              {/* Socials */}
-              <div className="flex gap-2 mt-5">
-                {[
-                  { label: "X/Twitter", icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> },
-                  { label: "Instagram", icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> },
-                  { label: "LinkedIn", icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
-                ].map((s) => (
-                  <a key={s.label} href="#" aria-label={s.label}
-                    className="w-8 h-8 rounded-lg flex items-center justify-center transition-all hover:-translate-y-0.5"
-                    style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", color: "rgba(255,255,255,0.45)" }}>
-                    {s.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h6 className="text-[12px] font-semibold uppercase tracking-[1.5px] mb-4" style={{ color: "rgba(255,255,255,0.35)" }}>Ürün</h6>
-              <ul className="space-y-2.5">
-                {[["#features","Özellikler"],["#mockup","Ekranlar"],["#pricing","Fiyatlandırma"],["#faq","SSS"]].map(([href, label]) => (
-                  <li key={href}>
-                    <a href={href} className="text-[13.5px] transition-colors hover:text-white/70" style={{ color: "rgba(255,255,255,0.4)" }}>{label}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h6 className="text-[12px] font-semibold uppercase tracking-[1.5px] mb-4" style={{ color: "rgba(255,255,255,0.35)" }}>İletişim</h6>
-              <ul className="space-y-2.5">
-                <li>
-                  <a href="mailto:salonpro@marssoft.com.tr" className="text-[13px] transition-colors hover:text-white/60" style={{ color: "rgba(255,255,255,0.38)" }}>
-                    salonpro@marssoft.com.tr
-                  </a>
-                </li>
-                <li className="text-[13px]" style={{ color: "rgba(255,255,255,0.38)" }}>Ataşehir, İstanbul</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 pt-6"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-            <p className="text-[12px]" style={{ color: "rgba(255,255,255,0.28)" }}>
-              © {new Date().getFullYear()} SalonPro.io — Marssoft Yazılım A.Ş.
-            </p>
-            <div className="flex gap-4">
-              <a href="#" className="text-[12px] transition-colors hover:text-white/50" style={{ color: "rgba(255,255,255,0.28)" }}>Gizlilik Politikası</a>
-              <a href="#" className="text-[12px] transition-colors hover:text-white/50" style={{ color: "rgba(255,255,255,0.28)" }}>Kullanım Koşulları</a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

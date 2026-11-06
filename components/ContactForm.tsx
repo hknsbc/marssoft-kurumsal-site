@@ -9,7 +9,7 @@ const faqs = [
   { q: "Hangi ürün bana uygun?", a: "Güzellik & kuaför için SalonPro.io, doktor ve klinikler için DoktorPlan, veteriner için Vet Panel, petshop için Pet Panel, marina için Marine Panel, stok takibi için Stok Panel idealdir." },
 ];
 
-const inputClass = "w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] text-white text-[14px] px-4 py-2.5 rounded-lg outline-none focus:border-[rgba(212,160,23,0.4)] placeholder:text-white/30 transition-colors";
+const inputClass = "w-full bg-white/[0.04] border border-white/10 text-white text-[14px] px-4 py-3 rounded-xl outline-none focus:border-[#D4A017]/60 focus:bg-white/[0.06] placeholder:text-white/30 transition-colors";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
@@ -43,13 +43,13 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
       {/* Form */}
       <div>
-        <h2 className="text-[22px] font-medium text-white mb-6">Mesaj Gönderin</h2>
+        <h2 className="font-display text-3xl text-white mb-6">Mesaj gönderin</h2>
         {sent ? (
-          <div className="bg-[rgba(27,61,128,0.18)] border border-[rgba(43,94,200,0.3)] rounded-xl p-8 text-center">
-            <div className="text-[40px] mb-3">✅</div>
+          <div className="bg-[#D4A017]/[0.07] border border-[#D4A017]/30 rounded-3xl p-8 text-center">
+            
             <h3 className="text-[18px] font-medium text-white mb-2">Mesajınız Alındı!</h3>
             <p className="text-[14px] text-white/60 mb-5">En kısa sürede sizinle iletişime geçeceğiz.</p>
             <button onClick={() => setSent(false)} className="text-[13px] text-[#D4A017] hover:text-[#F0CC6A] transition-colors">
@@ -77,6 +77,8 @@ export default function ContactForm() {
                 <label className="block text-[13px] text-white/50 mb-1.5">Konu</label>
                 <select name="subject" value={form.subject} onChange={handleChange} className={inputClass}>
                   <option value="" className="bg-[#0a0a1a]">Seçin...</option>
+                  <option className="bg-[#0a0a1a]">Kurumsal Web Sitesi Teklifi</option>
+                  <option className="bg-[#0a0a1a]">Özel Yazılım Teklifi</option>
                   <option className="bg-[#0a0a1a]">SalonPro.io Demo</option>
                   <option className="bg-[#0a0a1a]">DoktorPlan Demo</option>
                   <option className="bg-[#0a0a1a]">Vet Panel Demo</option>
@@ -99,11 +101,11 @@ export default function ContactForm() {
               </div>
             )}
             <button type="submit" disabled={loading}
-              className="w-full disabled:opacity-60 text-white py-3 rounded-lg text-[14px] font-semibold transition-all flex items-center justify-center gap-2 hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, #B8860B, #D4A017)" }}>
+              className="accent-button w-full disabled:opacity-60 text-[#0a0a0f] py-3.5 rounded-full text-[14px] font-semibold transition-all flex items-center justify-center gap-2 hover:opacity-90"
+              style={{ background: "linear-gradient(120deg, #B8860B, #D4A017 55%, #F0CC6A)" }}>
               {loading ? (
                 <>
-                  <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
                   Gönderiliyor...
                 </>
               ) : "Mesajı Gönder →"}
@@ -114,11 +116,11 @@ export default function ContactForm() {
 
       {/* FAQ */}
       <div>
-        <h2 className="text-[22px] font-medium text-white mb-6">Sık Sorulan Sorular</h2>
+        <h2 className="font-display text-3xl text-white mb-6">Sık sorulan sorular</h2>
         <div className="space-y-3">
           {faqs.map((f) => (
-            <div key={f.q} className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(212,160,23,0.25)] rounded-xl p-5 transition-colors">
-              <h3 className="text-[14px] font-medium text-white mb-2">{f.q}</h3>
+            <div key={f.q} className="card-premium rounded-2xl p-5 transition-colors">
+              <h3 className="text-[14.5px] font-semibold text-white mb-2">{f.q}</h3>
               <p className="text-[13px] text-white/55 leading-[1.6]">{f.a}</p>
             </div>
           ))}

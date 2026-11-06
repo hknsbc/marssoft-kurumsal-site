@@ -13,15 +13,6 @@ export default function SalonProLayout({
 }) {
   return (
     <>
-      <style>{`
-        #marssoft-global-nav,
-        #marssoft-global-footer {
-          display: none !important;
-        }
-        body > main {
-          padding: 0 !important;
-        }
-      `}</style>
       {children}
     </>
   );

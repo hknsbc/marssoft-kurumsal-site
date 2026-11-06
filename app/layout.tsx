@@ -1,5 +1,5 @@
-﻿import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -7,6 +7,12 @@ import Footer from "@/components/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin", "latin-ext"],
+  style: ["normal", "italic"],
 });
 
 const geistMono = Geist_Mono({
@@ -17,13 +23,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://marssoft.com.tr"),
   title: {
-    default: "Marssoft — KOBİ'lere Özel Bulut SaaS Yazılımlar",
+    default: "Marssoft — Kurumsal Web Siteleri & Sektöre Özel Yazılımlar",
     template: "%s | Marssoft",
   },
   description:
-    "Marssoft, küçük ve orta ölçekli işletmeler için geliştirilmiş bulut tabanlı SaaS yazılım çözümleri sunar. SalonPro.io, DoktorPlan, Vet Panel, Pet Panel, Marine Panel ve Stok Panel ile işletmenizi dijitalleştirin.",
+    "Marssoft; kurumsal web siteleri tasarlar, DoktorPlan, Stok Panel, SalonPro.io gibi sektöre özel bulut yazılımlar geliştirir. İşletmenizi premium bir dijital altyapıyla büyütün.",
   keywords: [
-    "SaaS yazılım", "KOBİ yazılımı", "bulut yazılım", "güzellik salonu yazılımı",
+    "kurumsal web sitesi", "web tasarım", "özel yazılım geliştirme", "SaaS yazılım", "KOBİ yazılımı", "bulut yazılım", "güzellik salonu yazılımı",
     "kuaför programı", "SalonPro", "randevu programı", "veteriner yazılımı",
     "DoktorPlan", "klinik randevu yazılımı", "Vet Panel", "Pet Panel", "petshop yazılımı", "marina yazılımı", "Marine Panel",
     "stok takip programı", "Stok Panel", "envanter yönetimi", "Marssoft",
@@ -139,7 +145,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <head>
         <script

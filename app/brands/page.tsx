@@ -1,156 +1,72 @@
-﻿import Link from "next/link";
+﻿import Reveal from "@/components/Reveal";
+import { GoldButton, PageHero, SectionHeading } from "@/components/site/ui";
 
 const references = [
-  {
-    name: "Gül Güzellik Salonu",
-    category: "Güzellik & Kuaför",
-    product: "SalonPro.io",
-    city: "İstanbul",
-    text: "SalonPro ile randevu yönetimimiz tamamen değişti. WhatsApp üzerinden otomatik hatırlatma harika!",
-    author: "Ayşe K.",
-    icon: "💇",
-    iconBg: "bg-[rgba(27,61,128,0.22)]",
-  },
-  {
-    name: "PatiVet Kliniği",
-    category: "VET PANEL",
-    product: "Vet Panel",
-    city: "Ankara",
-    text: "Vet Panel sayesinde hasta takibimiz çok kolaylaştı. Kurulum hızlıydı, destek mükemmel.",
-    author: "Dr. Mehmet S.",
-    icon: "🐾",
-    iconBg: "bg-[rgba(29,158,117,0.2)]",
-  },
-  {
-    name: "Pati Pet Panel",
-    category: "Pet Panel",
-    product: "Stok Panel",
-    city: "İzmir",
-    text: "Stok Panel yazılımı ile artık hiçbir ürünümüz kaybolmuyor. Raporlar çok detaylı.",
-    author: "Fatih B.",
-    icon: "📦",
-    iconBg: "bg-[rgba(216,90,48,0.2)]",
-  },
-  {
-    name: "Bella Hair Studio",
-    category: "Kuaför",
-    product: "SalonPro.io",
-    city: "Bursa",
-    text: "Çok şube yönetimi artık çok kolay. Her sabah tüm şubelerin durumunu tek ekrandan görüyorum.",
-    author: "Selin Y.",
-    icon: "💇",
-    iconBg: "bg-[rgba(27,61,128,0.22)]",
-  },
-  {
-    name: "HayatVet",
-    category: "VET PANEL Kliniği",
-    product: "Vet Panel",
-    city: "Antalya",
-    text: "Aşı takvimi hatırlatmaları sayesinde müşteri kaybımız neredeyse sıfıra indi.",
-    author: "Dr. Zeynep A.",
-    icon: "🐾",
-    iconBg: "bg-[rgba(29,158,117,0.2)]",
-  },
-  {
-    name: "Depo Market",
-    category: "Perakende",
-    product: "Stok Panel",
-    city: "Konya",
-    text: "Barkod ile giriş/çıkış takibi çok pratik. Kritik stok uyarıları sayesinde hiç stok tükenmemesi yaşamıyoruz.",
-    author: "Hasan D.",
-    icon: "📦",
-    iconBg: "bg-[rgba(216,90,48,0.2)]",
-  },
-];
-
-const stats = [
-  { value: "500+", label: "Aktif İşletme" },
-  { value: "15+", label: "Şehir" },
-  { value: "96%", label: "Memnuniyet" },
-  { value: "7/24", label: "Destek" },
+  { name: "Gül Güzellik Salonu", category: "Güzellik & Kuaför", product: "SalonPro.io", city: "İstanbul", text: "SalonPro ile randevu yönetimimiz tamamen değişti. WhatsApp üzerinden otomatik hatırlatma harika!", author: "Ayşe K.", color: "#D4A017" },
+  { name: "PatiVet Kliniği", category: "Veteriner", product: "Vet Panel", city: "Ankara", text: "Vet Panel sayesinde hasta takibimiz çok kolaylaştı. Kurulum hızlıydı, destek mükemmel.", author: "Dr. Mehmet S.", color: "#34c38f" },
+  { name: "Pati Pet Panel", category: "Petshop", product: "Stok Panel", city: "İzmir", text: "Stok Panel yazılımı ile artık hiçbir ürünümüz kaybolmuyor. Raporlar çok detaylı.", author: "Fatih B.", color: "#f0814f" },
+  { name: "Bella Hair Studio", category: "Kuaför", product: "SalonPro.io", city: "Bursa", text: "Çok şube yönetimi artık çok kolay. Her sabah tüm şubelerin durumunu tek ekrandan görüyorum.", author: "Selin Y.", color: "#D4A017" },
+  { name: "HayatVet", category: "Veteriner", product: "Vet Panel", city: "Antalya", text: "Aşı takvimi hatırlatmaları sayesinde müşteri kaybımız neredeyse sıfıra indi.", author: "Dr. Zeynep A.", color: "#34c38f" },
+  { name: "Depo Market", category: "Perakende", product: "Stok Panel", city: "Konya", text: "Barkod ile giriş/çıkış takibi çok pratik. Kritik stok uyarıları sayesinde hiç stok tükenmemesi yaşamıyoruz.", author: "Hasan D.", color: "#f0814f" },
 ];
 
 export const metadata = {
   title: "Referanslar",
-  description: "Dünyanın dört bir yanından 500'den fazla işletme Marssoft yazılımlarına güveniyor. Müşteri başarı hikayelerini ve referanslarımızı inceleyin.",
+  description: "Marssoft yazılımlarını kullanan işletmelerin deneyimlerini inceleyin.",
   alternates: { canonical: "https://marssoft.com.tr/brands" },
   openGraph: {
     title: "Referanslar | Marssoft",
-    description: "500+ global işletme Marssoft ile dijital dönüşümünü tamamladı.",
+    description: "Marssoft ile dijital dönüşümünü tamamlayan işletmeler.",
     url: "https://marssoft.com.tr/brands",
   },
 };
 
 export default function Brands() {
   return (
-    <div className="bg-[#0a0a1a] text-white">
-      {/* Hero */}
-      <section className="border-b border-[rgba(255,255,255,0.08)] px-6 lg:px-8 py-16"
-        style={{ background: "linear-gradient(135deg, #0a0a1a 0%, #1a1040 50%, #0d1a30 100%)" }}>
-        <div className="max-w-6xl mx-auto max-w-[560px]">
-          <div className="text-[12px] text-[#D4A017] uppercase tracking-[2px] mb-3">Referanslar</div>
-          <h1 className="text-[36px] md:text-[28px] md:text-[42px] font-medium text-white leading-[1.2] mb-4">
-            Dünyanın Dört Bir Yanından <span className="text-[#D4A017]">Memnun Müşteriler</span>
-          </h1>
-          <p className="text-[16px] text-white/60 leading-[1.7]">
-            500&apos;den fazla işletme MarsSoft yazılımlarıyla iş süreçlerini dijitalleştirdi.
-          </p>
-        </div>
-      </section>
+    <div className="bg-[#05060a] text-white">
+      <PageHero
+        eyebrow="Referanslar"
+        title="Memnun"
+        accent="müşteriler."
+        description="Marssoft yazılımlarıyla iş süreçlerini dijitalleştiren işletmelerden geri bildirimler."
+      />
 
-      {/* Stats */}
-      <div className="bg-[rgba(255,255,255,0.03)] border-b border-[rgba(255,255,255,0.08)]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-5">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-[28px] font-medium text-[#D4A017]">{s.value}</div>
-              <div className="text-[12px] text-white/50 mt-1">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* References */}
-      <section className="px-6 lg:px-8 py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-[12px] text-[#D4A017] uppercase tracking-[2px] mb-2">Müşterilerimiz</div>
-          <div className="text-[28px] font-medium text-white mb-10">Onlar Denedi, Memnun Kaldı</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <section className="py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeading eyebrow="Müşterilerimiz" title="Onlar denedi," accent="memnun kaldı." />
+          <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {references.map((r, i) => (
-              <div key={i} className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(43,94,200,0.3)] rounded-xl p-6 transition-colors">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-9 h-9 ${r.iconBg} rounded-lg flex items-center justify-center text-[16px]`}>
-                    {r.icon}
-                  </div>
-                  <div>
-                    <div className="text-[14px] font-medium text-white">{r.name}</div>
-                    <div className="text-[12px] text-[#D4A017]">{r.product} · {r.city}</div>
-                  </div>
-                </div>
-                <p className="text-[13px] text-white/60 leading-[1.7] mb-3 italic">
-                  &ldquo;{r.text}&rdquo;
-                </p>
-                <div className="text-[12px] text-[#D4A017]">— {r.author}, {r.category}</div>
-              </div>
+              <Reveal key={r.name} delay={(i % 3) * 90}>
+                <figure className="card-premium h-full rounded-3xl p-7">
+                  <span className="font-display text-5xl leading-none" style={{ color: r.color }}>“</span>
+                  <blockquote className="mt-2 text-[14.5px] italic leading-7 text-white/65">{r.text}</blockquote>
+                  <figcaption className="mt-6 border-t border-white/[0.08] pt-4">
+                    <p className="text-[14px] font-semibold text-white">{r.name}</p>
+                    <p className="mt-0.5 text-[12px]" style={{ color: r.color }}>
+                      {r.product} · {r.city}
+                    </p>
+                    <p className="mt-0.5 text-[12px] text-white/40">
+                      {r.author}, {r.category}
+                    </p>
+                  </figcaption>
+                </figure>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="border-t border-[rgba(255,255,255,0.08)] px-6 lg:px-8 py-14 text-center">
-        <div className="max-w-lg mx-auto">
-          <h2 className="text-[26px] font-medium text-white mb-3">Siz de bu listeye katılın</h2>
-          <p className="text-[15px] text-white/50 mb-7">14 gün ücretsiz deneyin. Kredi kartı gerekmez.</p>
-          <Link href="/contact" className="inline-block bg-[#B8860B] hover:bg-[#9A7209] text-white px-6 py-3 rounded-lg text-[14px] font-medium transition-colors">
-            Ücretsiz Başlayın
-          </Link>
-        </div>
+      <section className="px-6 pb-24 text-center">
+        <Reveal className="mx-auto max-w-xl">
+          <h2 className="font-display text-4xl text-white sm:text-5xl">
+            Siz de <span className="gold-text italic">aramıza katılın.</span>
+          </h2>
+          <p className="mb-8 mt-4 text-[15px] text-white/50">Ücretsiz deneyin veya web siteniz için teklif alın.</p>
+          <div className="flex justify-center">
+            <GoldButton href="/contact">Hemen başlayın</GoldButton>
+          </div>
+        </Reveal>
       </section>
     </div>
   );
 }
-
-
-
-

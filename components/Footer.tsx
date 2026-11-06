@@ -1,5 +1,6 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import PaymentLogos from "@/components/PaymentLogos";
+import { products as productList } from "@/lib/products";
 
 function TwitterIcon() {
   return (
@@ -34,6 +35,7 @@ const socialLinks = [
 ];
 
 const quickLinks = [
+  { href: "/web-tasarim", label: "Kurumsal Web Sitesi" },
   { href: "/about", label: "Hakkımızda" },
   { href: "/solutions", label: "Ürünlerimiz" },
   { href: "/pricing", label: "Fiyatlandırma" },
@@ -47,37 +49,20 @@ const legalLinks = [
   { href: "/delivery-returns", label: "Teslimat ve İade Şartları" },
 ];
 
-const products = [
-  { href: "/solutions#salonpro", label: "SalonPro.io" },
-  { href: "/solutions#doktorplan", label: "DoktorPlan" },
-  { href: "/solutions#vetpanel", label: "Vet Panel" },
-  { href: "/solutions#petpanel", label: "Pet Panel" },
-  { href: "/solutions#marinepanel", label: "Marine Panel" },
-  { href: "/solutions#stokpanel", label: "Stok Panel" },
-];
+const products = productList.map((p) => ({ href: p.href, label: p.name, external: p.external }));
 
 export default function Footer() {
   return (
-    <footer id="marssoft-global-footer" className="border-t border-white/[0.07] bg-[#06070b]">
+    <footer id="marssoft-global-footer" className="relative border-t border-white/[0.07] bg-[#05060a]">
+      <div className="gold-line absolute inset-x-0 top-0" />
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div className="mb-12 grid gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-2">
             <Link href="/" className="mb-4 inline-flex select-none items-center">
-              <span
-                className="text-[28px] font-black leading-none tracking-[-0.5px]"
-                style={{
-                  background: "linear-gradient(135deg, #B8860B 0%, #D4A017 30%, #F0CC6A 55%, #D4A017 75%, #B8860B 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  filter: "drop-shadow(0 1px 6px rgba(184,134,11,0.4))",
-                  fontFamily: "'Georgia', 'Times New Roman', serif",
-                }}
-              >
-                Marssoft
-              </span>
+              <span className="font-display gold-text text-[32px] font-semibold leading-none tracking-[-0.02em]">Marssoft</span>
             </Link>
             <p className="mb-5 max-w-xs text-[13.5px] leading-[1.7] text-white/45">
-              KOBİ&apos;lere özel, global ölçekte hizmet veren bulut tabanlı SaaS şirketi. Ataşehir, İstanbul.
+              Kurumsal web siteleri ve sektöre özel bulut yazılımlarla işletmenizi dijitalde büyütüyoruz. Ataşehir, İstanbul.
             </p>
             <div className="flex items-center gap-2">
               {socialLinks.map((s) => (
@@ -117,9 +102,15 @@ export default function Footer() {
             <ul className="mb-7 space-y-2.5">
               {products.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-[13.5px] text-white/40 transition-colors hover:text-white/80">
-                    {l.label}
-                  </Link>
+                  {l.external ? (
+                    <a href={l.href} target="_blank" rel="noopener noreferrer" className="text-[13.5px] text-white/40 transition-colors hover:text-white/80">
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link href={l.href} className="text-[13.5px] text-white/40 transition-colors hover:text-white/80">
+                      {l.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

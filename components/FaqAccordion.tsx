@@ -1,8 +1,8 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 
-const faqs = [
+const defaultFaqs = [
   {
     q: "Ürünlerinizi ücretsiz deneyebilir miyim?",
     a: "Evet. SalonPro.io, DoktorPlan, Vet Panel, Pet Panel, Marine Panel ve Stok Panel ürünlerinin tamamı için 14 günlük tam özellikli ücretsiz deneme sunuyoruz. Kredi kartı bilgisi gerekmez.",
@@ -29,7 +29,7 @@ const faqs = [
   },
 ];
 
-export default function FaqAccordion() {
+export default function FaqAccordion({ faqs = defaultFaqs }: { faqs?: { q: string; a: string }[] }) {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
