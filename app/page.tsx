@@ -193,18 +193,18 @@ export default function Home() {
             </div>
 
             {/* Layered visual: corporate site + DoktorPlan */}
-            <TiltStage className="relative mx-auto w-full max-w-[560px] pb-20 lg:max-w-none">
+            <TiltStage className="relative mx-auto w-full max-w-[560px] pb-36 lg:max-w-none">
               <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-[#D4A017]/15 to-[#2B5EC8]/20 blur-3xl" />
               <div style={{ "--d": "0.5s" } as React.CSSProperties} className="hero-seq-pop tilt-layer relative">
                 <BrowserMockup className="animate-float-slow relative" />
                 <div className="tilt-float absolute -left-3 -top-5 hidden sm:block">
                   <span style={{ "--d": "1.2s" } as React.CSSProperties} className="hero-seq-pop inline-flex items-center gap-2 rounded-full border border-[#94B8F0]/40 bg-[#0a0b11]/95 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#94B8F0] shadow-xl backdrop-blur">
-                    <Layers size={13} /> Kurumsal web sitesi
+                    <Layers size={13} /> Kurumsal Web Sitesi Tasarımı
                   </span>
                 </div>
-                <div className="tilt-float absolute -bottom-24 -left-4 hidden w-[58%] sm:block lg:-left-14">
+                <div className="tilt-float absolute -bottom-36 -left-4 hidden w-[54%] sm:block lg:-left-14">
                   <div style={{ "--d": "1.1s" } as React.CSSProperties} className="hero-seq-pop">
-                    <ClinicMockup className="[transform:rotate(-2deg)]" />
+                    <ClinicMockup compact className="[transform:rotate(-2deg)]" />
                   </div>
                 </div>
               </div>
@@ -218,7 +218,7 @@ export default function Home() {
                 <Layers size={24} />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-[#94B8F0]">Kurumsal web sitesi</span>
+                <span className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-[#94B8F0]">Kurumsal Web Sitesi Tasarımı</span>
                 <span className="font-display mt-1 block text-xl text-white sm:text-2xl">Markanıza özel tasarım, SEO ve yayın</span>
               </span>
               <ArrowUpRight size={20} className="shrink-0 text-white/40 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />

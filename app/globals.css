@@ -443,3 +443,54 @@ body {
 }
 
 .intro-skip .intro-curtain { display: none; }
+
+
+/* ── Kurumsal web mockup animasyonu (8 sn döngü) ── */
+.bm-bar { transform-origin: left center; animation: bmBar 8s cubic-bezier(0.22, 1, 0.36, 1) infinite; animation-delay: calc(var(--i, 0) * 0.14s); }
+.bm-pop { animation: bmPop 8s cubic-bezier(0.22, 1, 0.36, 1) infinite; animation-delay: calc(var(--i, 0) * 0.14s); }
+@keyframes bmBar {
+  0% { opacity: 0; transform: scaleX(0); }
+  8%, 86% { opacity: 1; transform: scaleX(1); }
+  94%, 100% { opacity: 0; transform: scaleX(1); }
+}
+@keyframes bmPop {
+  0% { opacity: 0; transform: translateY(14px) scale(0.92); }
+  8%, 86% { opacity: 1; transform: none; }
+  94%, 100% { opacity: 0; transform: none; }
+}
+.bm-url { width: 0; animation: bmUrl 8s steps(15, end) infinite; }
+@keyframes bmUrl {
+  0% { width: 0; }
+  12%, 90% { width: 15ch; }
+  100% { width: 0; }
+}
+.bm-live { animation: bmLive 8s ease infinite; }
+@keyframes bmLive {
+  0%, 55% { opacity: 0; transform: scale(0.8); }
+  62%, 90% { opacity: 1; transform: none; }
+  100% { opacity: 0; }
+}
+.bm-sheen { animation: bmSheen 8s ease-in-out infinite; }
+@keyframes bmSheen {
+  0%, 40% { transform: translateX(0); }
+  70%, 100% { transform: translateX(420%); }
+}
+.bm-step { animation: bmStep 8s ease infinite; animation-delay: calc(var(--i, 0) * 1.6s); }
+@keyframes bmStep {
+  0%, 20% { background-color: #0b0c12; box-shadow: none; }
+  4%, 16% { background-color: rgba(212, 160, 23, 0.14); box-shadow: inset 0 -2px 0 #D4A017; }
+}
+.bm-cursor { animation: bmCursor 8s ease-in-out infinite; }
+@keyframes bmCursor {
+  0% { transform: translate(40px, 30px); opacity: 0; }
+  10% { opacity: 1; }
+  30% { transform: translate(120px, 120px); }
+  55% { transform: translate(200px, 200px); }
+  75% { transform: translate(120px, 170px) scale(0.9); }
+  90%, 100% { transform: translate(240px, 90px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bm-bar, .bm-pop, .bm-url, .bm-live, .bm-sheen, .bm-step, .bm-cursor { animation: none !important; opacity: 1; }
+  .bm-url { width: auto; }
+  .bm-cursor { display: none; }
+}

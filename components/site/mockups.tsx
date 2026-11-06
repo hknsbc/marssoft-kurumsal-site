@@ -1,6 +1,7 @@
 // Saf CSS ile çizilmiş, örnek amaçlı arayüz görselleri (gerçek müşteri verisi içermez).
 
 export function BrowserMockup({ className = "" }: { className?: string }) {
+  const st = (i: number) => ({ "--i": i }) as React.CSSProperties;
   return (
     <div
       className={`overflow-hidden rounded-2xl border border-white/10 bg-[#0b0c12] shadow-[0_40px_120px_rgba(0,0,0,0.55)] ${className}`}
@@ -9,51 +10,69 @@ export function BrowserMockup({ className = "" }: { className?: string }) {
         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]/80" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]/80" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]/80" />
-        <div className="ml-3 flex-1 rounded-full bg-white/[0.05] px-4 py-1 text-[11px] text-white/35">
-          markaniz.com.tr
+        <div className="ml-3 flex-1 overflow-hidden rounded-full bg-white/[0.05] px-4 py-1 text-[11px] text-white/45">
+          <span className="bm-url inline-block overflow-hidden whitespace-nowrap align-bottom">markaniz.com.tr</span>
         </div>
+        <span className="bm-live rounded-full bg-[#28c840]/15 px-2 py-0.5 text-[10px] font-semibold text-[#4ade80]">
+          ● Yayında
+        </span>
       </div>
       <div className="relative p-6">
         <div className="flex items-center justify-between">
-          <div className="h-3 w-20 rounded-full bg-gradient-to-r from-[#B8860B] to-[#F0CC6A]" />
+          <div className="bm-bar h-3 w-20 rounded-full bg-gradient-to-r from-[#B8860B] to-[#F0CC6A]" style={st(0)} />
           <div className="hidden gap-3 sm:flex">
             {[28, 36, 24, 32].map((w, i) => (
-              <div key={i} className="h-1.5 rounded-full bg-white/20" style={{ width: w }} />
+              <div key={i} className="bm-bar h-1.5 rounded-full bg-white/20" style={{ ...st(i + 1), width: w }} />
             ))}
           </div>
         </div>
         <div className="mt-8 grid gap-6 sm:grid-cols-[1.2fr_0.8fr] sm:items-center">
           <div>
-            <div className="h-2 w-24 rounded-full bg-[#D4A017]/60" />
-            <div className="mt-4 h-5 w-11/12 rounded-md bg-white/85" />
-            <div className="mt-2.5 h-5 w-8/12 rounded-md bg-white/85" />
-            <div className="mt-5 h-2 w-full rounded-full bg-white/15" />
-            <div className="mt-2 h-2 w-10/12 rounded-full bg-white/15" />
+            <div className="bm-bar h-2 w-24 rounded-full bg-[#D4A017]/60" style={st(5)} />
+            <div className="bm-bar mt-4 h-5 w-11/12 rounded-md bg-white/85" style={st(6)} />
+            <div className="bm-bar mt-2.5 h-5 w-8/12 rounded-md bg-white/85" style={st(7)} />
+            <div className="bm-bar mt-5 h-2 w-full rounded-full bg-white/15" style={st(8)} />
+            <div className="bm-bar mt-2 h-2 w-10/12 rounded-full bg-white/15" style={st(9)} />
             <div className="mt-6 flex gap-3">
-              <div className="h-8 w-24 rounded-full bg-gradient-to-r from-[#B8860B] to-[#F0CC6A]" />
-              <div className="h-8 w-20 rounded-full border border-white/20" />
+              <div className="bm-pop h-8 w-24 rounded-full bg-gradient-to-r from-[#B8860B] to-[#F0CC6A]" style={st(10)} />
+              <div className="bm-pop h-8 w-20 rounded-full border border-white/20" style={st(11)} />
             </div>
           </div>
-          <div className="relative h-36 rounded-2xl bg-gradient-to-br from-[#2B5EC8]/40 via-[#1A3D80]/30 to-[#D4A017]/30">
+          <div
+            className="bm-pop relative h-36 overflow-hidden rounded-2xl bg-gradient-to-br from-[#2B5EC8]/40 via-[#1A3D80]/30 to-[#D4A017]/30"
+            style={st(8)}
+          >
             <div className="absolute inset-3 rounded-xl border border-white/15" />
+            <div className="bm-sheen absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             <div className="absolute bottom-3 left-3 right-3 h-8 rounded-lg bg-black/40 backdrop-blur" />
           </div>
         </div>
         <div className="mt-7 grid grid-cols-3 gap-3">
           {[0, 1, 2].map((i) => (
-            <div key={i} className="rounded-xl border border-white/10 bg-white/[0.03] p-3">
+            <div key={i} className="bm-pop rounded-xl border border-white/10 bg-white/[0.03] p-3" style={st(12 + i)}>
               <div className="h-5 w-5 rounded-md bg-[#D4A017]/30" />
               <div className="mt-3 h-2 w-3/4 rounded-full bg-white/30" />
               <div className="mt-2 h-1.5 w-full rounded-full bg-white/10" />
             </div>
           ))}
         </div>
+        <svg className="bm-cursor pointer-events-none absolute left-0 top-0" width="22" height="22" viewBox="0 0 24 24" fill="#fff" stroke="#0b0c12" strokeWidth="1.5">
+          <path d="M4 3l16 7-7 2-2 7z" />
+        </svg>
+      </div>
+      <div className="grid grid-cols-3 gap-px border-t border-white/[0.07] bg-white/[0.07] text-center">
+        {["Tasarım", "Geliştirme", "Yayın"].map((t, i) => (
+          <div key={t} className="bm-step bg-[#0b0c12] px-3 py-3" style={st(i)}>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-white/35">Adım 0{i + 1}</p>
+            <p className="font-display mt-0.5 text-[15px] text-white">{t}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
-export function ClinicMockup({ className = "" }: { className?: string }) {
+export function ClinicMockup({ className = "", compact = false }: { className?: string; compact?: boolean }) {
   const rows = [
     { time: "09:00", name: "Hasta kaydı A.Y.", type: "Muayene", ok: true },
     { time: "09:30", name: "Hasta kaydı M.K.", type: "Kontrol", ok: true },
@@ -72,7 +91,7 @@ export function ClinicMockup({ className = "" }: { className?: string }) {
         </span>
       </div>
       <div className="divide-y divide-white/[0.06]">
-        {rows.map((r) => (
+        {(compact ? rows.slice(0, 3) : rows).map((r) => (
           <div key={r.time} className="flex items-center gap-4 px-5 py-3.5">
             <span className="w-12 text-[13px] font-semibold text-white/80">{r.time}</span>
             <div className="h-8 w-px bg-[#2dd4bf]/40" />
@@ -90,7 +109,7 @@ export function ClinicMockup({ className = "" }: { className?: string }) {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-3 gap-px border-t border-white/[0.07] bg-white/[0.07]">
+      <div className={`${compact ? "hidden" : "grid"} grid-cols-3 gap-px border-t border-white/[0.07] bg-white/[0.07]`}>
         {[
           ["Bugün", "12"],
           ["Bu hafta", "58"],
